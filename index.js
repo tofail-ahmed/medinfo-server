@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = "mongodb+srv://medinfo:medinfo@cluster0.zhsy6ko.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -54,17 +54,22 @@ app.get("/api/v1/medicines", async (req, res) => {
 
 app.get('/api/v1/medicines/search/:term', async (req, res) => {
   const term = req.params.term;
+  const limit = parseInt(req.query.limit, 10) || 10; // Default limit is 10 if not specified
+  const regex = new RegExp(term, 'i'); // Case-insensitive regex for the term
 
   try {
     const query = {
       $or: [
-        { medicine_name: { $regex: new RegExp(term, 'i') } },
-        { generic_name: { $regex: new RegExp(term, 'i') } },
-        { company_name: { $regex: new RegExp(term, 'i') } }
+        { medicine_name: { $regex: regex } },
+        { generic_name: { $regex: regex } },
+        { company_name: { $regex: regex } }
       ]
     };
 
-    const medicines = await medicine.find(query).toArray();
+    const medicines = await medicine.find(query).limit(limit).toArray();
+
+   
+
     const medNum = medicines.length;
 
     res.status(200).json({
@@ -73,10 +78,88 @@ app.get('/api/v1/medicines/search/:term', async (req, res) => {
       data: medicines
     });
   } catch (error) {
-    console.log('error', error);
+    console.error('Error fetching medicines:', error);
     res.status(500).json({
       success: false,
       message: "Something went wrong!!"
+    });
+  }
+});
+
+app.get("/api/v1/medicine/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log(id);
+    const query = { _id: new ObjectId(id) };
+    const SingleMedicine = await medicine.findOne(query);
+    if (!SingleMedicine) {
+      return res.status(404).json({
+        success: false,
+        message: "Project not found",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      message: "Medicine retrieved successfully",
+      data: SingleMedicine,
+    });
+  } catch (error) {
+    console.error("Error fetching project:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+});
+
+
+app.put("/api/v1/medicine/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log(id);
+    const {...fields } = req.body;
+    const filter = { _id: new ObjectId(id) };
+    const updatedBlog = { $set: { ...fields } };
+    const result = await medicine.updateOne(filter, updatedBlog);
+    res.status(200).json({
+      success: true,
+      message: "Medicine updated successfully",
+      data: result,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+});
+
+
+app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
+  const { id, field } = req.params;
+
+  try {
+    const filter = { _id: new ObjectId(id) };
+    const update = { $unset: { [field]: "" } }; // Unset the field
+
+    const updateResult = await medicine.updateOne(filter, update);
+
+    if (updateResult.matchedCount === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'Medicine not found',
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: `Field '${field}' deleted successfully`,
+    });
+  } catch (error) {
+    console.error('Error deleting field from medicine:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Something went wrong',
     });
   }
 });
