@@ -176,11 +176,11 @@ app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   
     app.get('/', (req, res) => {
-      res.send('Hello World!')
+      res.send('Welcome to MedInfo.aid 💕')
     })
     
     app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`)
+      console.log(`MedInfo.aid listening on port ${port}`)
     })
   
   
