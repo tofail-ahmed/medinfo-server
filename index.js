@@ -114,6 +114,25 @@ app.get("/api/v1/medicine/:id", async (req, res) => {
 });
 
 
+app.get("/api/v1/medicines/top",async(req,res)=>{
+  try{
+const topMedicines=await medicine.find().sort({sold:-1}).limit(5).toArray();
+const medNum = topMedicines.length; // Corrected this line to get the length of medicines
+res.status(200).json({
+  success: true,
+  message: `${medNum} medicines found successfully`, // Corrected this line to properly format the message
+  data: topMedicines
+});
+  }
+  catch(error){
+    console.error("Error fetching project:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+})
+
 app.put("/api/v1/medicine/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -165,6 +184,48 @@ app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
   }
 });
 
+
+
+app.put("/api/v1/medicine/sell/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { amountSold } = req.body;
+
+    // Validate the amountSold value
+    if (!amountSold || typeof amountSold !== 'number') {
+      return res.status(400).json({
+        success: false,
+        message: "'amountSold' must be a number",
+      });
+    }
+
+    const filter = { _id: new ObjectId(id) };
+    const update = { $inc: { sold: amountSold } }; // Increment the existing 'sold' field by the amountSold
+
+    const result = await medicine.updateOne(filter, update);
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'Medicine not found',
+      });
+    }
+
+    const updatedMedicine = await medicine.findOne(filter); // Fetch the updated document
+
+    res.status(200).json({
+      success: true,
+      message: `Medicine sold field updated successfully`,
+      data: updatedMedicine,  // Return the updated medicine
+    });
+  } catch (error) {
+    console.error('Error updating sold field:', error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+});
 
 
 
