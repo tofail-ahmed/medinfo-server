@@ -262,6 +262,29 @@ app.put("/api/v1/medicine/sell/:id", async (req, res) => {
 });
 
 
+app.get("/api/v1/medicines/latestSold", async (req, res) => {
+  try {
+    const latestMedicines = await medicine
+      .find({ lastSoldDate: { $exists: true } }) // Only include medicines with the lastSoldDate field
+      .sort({ lastSoldDate: -1 }) // Sort by lastSoldDate in descending order (latest first)
+      .limit(20) // Limit the results to the latest 20 medicines
+      .toArray();
+
+    const medNum = latestMedicines.length;
+
+    res.status(200).json({
+      success: true,
+      message: `${medNum} latest sold medicines found successfully`,
+      data: latestMedicines,
+    });
+  } catch (error) {
+    console.error("Error fetching latest sold medicines:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+});
 
 
 
