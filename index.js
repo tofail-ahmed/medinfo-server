@@ -185,6 +185,40 @@ app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
 });
 
 
+app.put("/api/v1/medicine/lastSoldDate/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const currentDate = new Date().toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
+
+    const filter = { _id: new ObjectId(id) };
+    const update = { $set: { lastSoldDate: currentDate } }; // Set or update the lastSoldDate field
+
+    const result = await medicine.updateOne(filter, update);
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'Medicine not found',
+      });
+    }
+
+    const updatedMedicine = await medicine.findOne(filter); // Fetch the updated document
+
+    res.status(200).json({
+      success: true,
+      message: `lastSoldDate field updated successfully`,
+      data: updatedMedicine, // Return the updated medicine
+    });
+  } catch (error) {
+    console.error('Error updating lastSoldDate field:', error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+});
+
+
 
 app.put("/api/v1/medicine/sell/:id", async (req, res) => {
   try {
