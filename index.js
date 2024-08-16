@@ -287,6 +287,77 @@ app.get("/api/v1/medicines/latestSold", async (req, res) => {
 });
 
 
+app.post("/api/v1/medicines", async (req, res) => {
+  try {
+    const {
+      medicine_name,
+      generic_name,
+      company_name,
+      alt_medicines,
+      description,
+      doses,
+      side_effects,
+      actions,
+      interactions,
+      uses,
+      sold,
+      warnings,
+    } = req.body;
+
+    // Validate required fields
+    if (!medicine_name || !generic_name || !company_name|| !alt_medicines ) {
+      return res.status(400).json({
+        success: false,
+        message: "Medicine name, generic name, and company name are required fields.",
+      });
+    }
+
+
+    // Check if a medicine with the same name already exists
+    const existingMedicine = await medicine.findOne({ medicine_name });
+    if (existingMedicine) {
+      return res.status(409).json({
+        success: false,
+        message: "A medicine with this name already exists.",
+      });
+    }
+
+    // Create the new medicine object
+    const newMedicine = {
+      medicine_name,
+      generic_name,
+      company_name,
+      alt_medicines: alt_medicines || [], // Default to empty array if not provided
+      description: description || "", // Default to empty string if not provided
+      doses: doses || "", // Default to empty string if not provided
+      side_effects: side_effects || [], // Default to empty array if not provided
+      actions: actions || "", // Default to empty string if not provided
+      interactions: interactions || [], // Default to empty array if not provided
+      uses: uses || [], // Default to empty array if not provided
+      sold: sold || 0, // Default sold is 0 if not provided
+      warnings: warnings || [], // Default to empty array if not provided
+      createdAt: new Date().toISOString().split('T')[0], // Add a timestamp for when the medicine was created
+    };
+
+    // Insert the new medicine into the collection
+    const result = await medicine.insertOne(newMedicine);
+
+    res.status(201).json({
+      success: true,
+      message: "New medicine added successfully",
+      data: newMedicine, // Return the inserted document
+    });
+  } catch (error) {
+    console.error("Error adding new medicine:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+});
+
+
+
 
 
     // Send a ping to confirm a successful connection
