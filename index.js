@@ -32,7 +32,7 @@ const db=client.db("medinfo");
 const medicine=db.collection("medicines")
 
 
-
+//* getting all medicines-------------------------
 app.get("/api/v1/medicines", async (req, res) => {
   try {
     const medicines = await medicine.find().toArray();
@@ -52,7 +52,7 @@ app.get("/api/v1/medicines", async (req, res) => {
 });
 
 
-
+//* getting medicines by name, company, generic------------
 app.get('/api/v1/medicines/search/:term', async (req, res) => {
   const term = req.params.term;
   const limit = parseInt(req.query.limit, 10) || 10; // Default limit is 10 if not specified
@@ -86,7 +86,7 @@ app.get('/api/v1/medicines/search/:term', async (req, res) => {
     });
   }
 });
-
+//* getting a specific medicine by id-------------------
 app.get("/api/v1/medicine/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -113,10 +113,10 @@ app.get("/api/v1/medicine/:id", async (req, res) => {
   }
 });
 
-
+//* getting top 20 medicines by sold-----------------------
 app.get("/api/v1/medicines/top",async(req,res)=>{
   try{
-const topMedicines=await medicine.find().sort({sold:-1}).limit(5).toArray();
+const topMedicines=await medicine.find().sort({sold:-1}).limit(20).toArray();
 const medNum = topMedicines.length; // Corrected this line to get the length of medicines
 res.status(200).json({
   success: true,
@@ -132,7 +132,7 @@ res.status(200).json({
     });
   }
 })
-
+//* updating a specific medicine by id
 app.put("/api/v1/medicine/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -154,7 +154,7 @@ app.put("/api/v1/medicine/:id", async (req, res) => {
   }
 });
 
-
+//* deleting any specific field of a specific medicine------------------
 app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
   const { id, field } = req.params;
 
@@ -184,7 +184,7 @@ app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
   }
 });
 
-
+//* updating or adding lastSoldDate--------------------------
 app.put("/api/v1/medicine/lastSoldDate/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -219,7 +219,7 @@ app.put("/api/v1/medicine/lastSoldDate/:id", async (req, res) => {
 });
 
 
-
+//* updating amountSold of specific medicine by id---------------
 app.put("/api/v1/medicine/sell/:id", async (req, res) => {
   try {
     const id = req.params.id;
@@ -261,7 +261,7 @@ app.put("/api/v1/medicine/sell/:id", async (req, res) => {
   }
 });
 
-
+//* getting latest medicines on lastSoldDate -----------------
 app.get("/api/v1/medicines/latestSold", async (req, res) => {
   try {
     const latestMedicines = await medicine
@@ -286,7 +286,7 @@ app.get("/api/v1/medicines/latestSold", async (req, res) => {
   }
 });
 
-
+//* adding nes medicine-----------
 app.post("/api/v1/medicines", async (req, res) => {
   try {
     const {
