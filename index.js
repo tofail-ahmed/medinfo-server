@@ -155,7 +155,7 @@ app.put("/api/v1/medicine/:id", async (req, res) => {
 });
 
 //* deleting any specific field of a specific medicine------------------
-app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
+app.delete('/api/v1/fieldDelete/:id/:field', async (req, res) => {
   const { id, field } = req.params;
 
   try {
@@ -179,7 +179,7 @@ app.delete('/api/v1/medicine/:id/:field', async (req, res) => {
     console.error('Error deleting field from medicine:', error);
     res.status(500).json({
       success: false,
-      message: 'Something went wrong',
+      message: 'Something went wrong from delete field',
     });
   }
 });
@@ -357,6 +357,41 @@ app.post("/api/v1/medicines", async (req, res) => {
 });
 
 
+//* deleting a medicine by id-------------
+app.delete("/api/v1/medicineDelete/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    // Validate the ID format
+    if (!ObjectId.isValid(id)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid medicine ID format.",
+      });
+    }
+
+    const filter = { _id: new ObjectId(id) };
+    const result = await medicine.deleteOne(filter);
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Medicine not found.",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Medicine deleted successfully.",
+    });
+  } catch (error) {
+    console.error("Error deleting medicine:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error.",
+    });
+  }
+});
 
 
 
