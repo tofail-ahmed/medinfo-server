@@ -11,7 +11,8 @@
         "actions": "Inhibits the synthesis of prostaglandins in the brain.",
         "interactions": ["Alcohol", "Warfarin"],
         "uses": ["Pain relief", "Fever reduction"],
-         "sold":10, 
+        "available":100, 
+        "sold":10, 
         "warnings": [
           "Avoid excessive alcohol consumption",
           "Do not exceed 4000 mg per day"
@@ -30,7 +31,8 @@
         "actions": "Inhibits the synthesis of prostaglandins in the brain.",
         "interactions": ["Alcohol", "Warfarin"],
         "uses": ["Pain relief", "Fever reduction"],
-         "sold":20, 
+        "available":100, 
+        "sold":20, 
         "warnings": [
           "Avoid excessive alcohol consumption",
           "Do not exceed 4000 mg per day"
@@ -49,7 +51,8 @@
         "actions": "Inhibits cyclooxygenase (COX) enzymes involved in prostaglandin synthesis.",
         "interactions": ["Aspirin", "Blood thinners"],
         "uses": ["Pain relief", "Fever reduction", "Inflammation reduction"],
-         "sold":13, 
+        "available":100, 
+        "sold":13, 
         "warnings": [
           "Take with food to avoid stomach upset",
           "Avoid in patients with heart disease"
@@ -67,7 +70,8 @@
         "actions": "Inhibits bacterial cell wall synthesis.",
         "interactions": ["Methotrexate", "Warfarin"],
         "uses": ["Bacterial infections", "Strep throat", "Ear infections"],
-         "sold":14, 
+        "available":100, 
+        "sold":14, 
         "warnings": [
           "Complete the full course of treatment",
           "May reduce the effectiveness of oral contraceptives"
@@ -85,7 +89,8 @@
         "actions": "Blocks histamine H1 receptors.",
         "interactions": ["Alcohol", "Sedatives"],
         "uses": ["Allergy relief", "Hay fever", "Urticaria"],
-         "sold":15, 
+        "available":100, 
+        "sold":15, 
         "warnings": ["May cause drowsiness", "Avoid driving if affected"]
       },
       {
@@ -100,7 +105,8 @@
         "actions": "Inhibits the angiotensin-converting enzyme.",
         "interactions": ["Diuretics", "Potassium supplements"],
         "uses": ["High blood pressure", "Heart failure"],
-         "sold":16, 
+        "available":100, 
+        "sold":16, 
         "warnings": ["Monitor potassium levels", "Avoid during pregnancy"]
       },
       {
@@ -115,7 +121,8 @@
         "actions": "Inhibits calcium ion influx into vascular smooth muscle and myocardium.",
         "interactions": ["Simvastatin", "CYP3A4 inhibitors"],
         "uses": ["High blood pressure", "Angina"],
-         "sold":17, 
+        "available":100, 
+        "sold":17, 
         "warnings": ["Monitor blood pressure regularly", "May cause dizziness"]
       },
       {
@@ -130,7 +137,8 @@
         "actions": "Decreases hepatic glucose production and increases insulin sensitivity.",
         "interactions": ["Alcohol", "Iodinated contrast agents"],
         "uses": ["Type 2 diabetes"],
-         "sold":18, 
+        "available":100, 
+        "sold":18, 
         "warnings": [
           "Monitor kidney function",
           "Take with meals to reduce gastrointestinal effects"
@@ -148,7 +156,8 @@
         "actions": "Inhibits HMG-CoA reductase, reducing cholesterol synthesis.",
         "interactions": ["Grapefruit juice", "CYP3A4 inhibitors"],
         "uses": ["High cholesterol", "Cardiovascular risk reduction"],
-         "sold":25, 
+        "available":100, 
+        "sold":25, 
         "warnings": ["Monitor liver function", "Avoid grapefruit juice"]
       },
       {
@@ -163,7 +172,8 @@
         "actions": "Inhibits the proton pump in gastric parietal cells, reducing acid production.",
         "interactions": ["Clopidogrel", "Methotrexate"],
         "uses": ["GERD", "Stomach ulcers"],
-         "sold":54, 
+        "available":100, 
+        "sold":54, 
         "warnings": ["Take before meals", "Monitor magnesium levels"]
       },
       {
@@ -178,7 +188,8 @@
         "actions": "Blocks the effects of angiotensin II, lowering blood pressure.",
         "interactions": ["NSAIDs", "Potassium supplements"],
         "uses": ["High blood pressure", "Diabetic nephropathy"],
-         "sold":67, 
+        "available":100, 
+        "sold":67, 
         "warnings": ["Monitor potassium levels", "Avoid during pregnancy"]
       },
       {
@@ -199,6 +210,7 @@
           "Muscle spasms",
           "Seizures"
         ],
+        "available":100,
         "sold":23, 
         "warnings": ["May cause dependence", "Avoid alcohol"]
       },
@@ -214,7 +226,8 @@
         "actions": "Enhances the effect of gamma-aminobutyric acid (GABA) in the brain.",
         "interactions": ["Alcohol", "Other CNS depressants"],
         "uses": ["Anxiety disorders", "Panic attacks"],
-         "sold":67, 
+        "available":100, 
+        "sold":67, 
         "warnings": ["May cause dependence", "Avoid alcohol"]
       },
       {
@@ -229,7 +242,8 @@
         "actions": "Blocks histamine H1 receptors.",
         "interactions": ["Alcohol", "Sedatives"],
         "uses": ["Allergy relief", "Hay fever", "Urticaria"],
-         "sold":200, 
+        "available":100, 
+        "sold":200, 
         "warnings": ["May cause drowsiness", "Avoid driving if affected"]
       },
       {
@@ -244,7 +258,8 @@
         "actions": "Inhibits bacterial DNA gyrase and topoisomerase IV.",
         "interactions": ["Warfarin", "Theophylline"],
         "uses": ["Bacterial infections", "Urinary tract infections", "Pneumonia"],
-         "sold":15, 
+        "available":100, 
+        "sold":15, 
         "warnings": [
           "May increase the risk of tendon rupture",
           "Avoid in children and pregnant women"
@@ -262,7 +277,8 @@
         "actions": "Inhibits the proton pump in gastric parietal cells, reducing acid production.",
         "interactions": ["Clopidogrel", "Warfarin"],
         "uses": ["GERD", "Peptic ulcer disease", "Zollinger-Ellison syndrome"],
-         "sold":13, 
+        "available":100, 
+        "sold":13, 
         "warnings": ["Take before meals", "Monitor magnesium levels"]
       },
       {
@@ -277,7 +293,8 @@
         "actions": "Blocks beta-1 adrenergic receptors, reducing heart rate and contractility.",
         "interactions": ["Calcium channel blockers", "Insulin"],
         "uses": ["High blood pressure", "Angina", "Heart failure"],
-         "sold":100, 
+        "available":100, 
+        "sold":100, 
         "warnings": [
           "Do not abruptly discontinue",
           "May mask symptoms of hypoglycemia"
@@ -301,6 +318,7 @@
           "Panic disorder",
           "Social anxiety disorder"
         ],
+        "available":100,
         "sold":23,
         "warnings": [
           "May increase suicidal thoughts in children and young adults",
@@ -319,7 +337,8 @@
         "actions": "Partial agonist at dopamine D2 and serotonin 5-HT1A receptors.",
         "interactions": ["Fluoxetine", "Quinidine"],
         "uses": ["Schizophrenia", "Bipolar disorder", "Major depressive disorder"],
-         "sold":10, 
+        "available":100, 
+        "sold":10, 
         "warnings": [
           "May increase the risk of suicidal thoughts in children and young adults",
           "Monitor for signs of neuroleptic malignant syndrome"
@@ -337,7 +356,8 @@
         "actions": "Blocks leukotriene receptors, reducing bronchoconstriction and inflammation.",
         "interactions": ["Theophylline", "Phenobarbital"],
         "uses": ["Asthma", "Allergic rhinitis"],
-         "sold":25, 
+        "available":100, 
+        "sold":25, 
         "warnings": [
           "May cause neuropsychiatric events",
           "Do not abruptly discontinue"
@@ -361,6 +381,7 @@
           "Bulimia nervosa",
           "Panic disorder"
         ],
+        "available":100,
         "sold":29,
         "warnings": [
           "May increase suicidal thoughts in children and young adults",
@@ -379,7 +400,8 @@
         "actions": "Inhibits the reuptake of norepinephrine and dopamine.",
         "interactions": ["MAOIs", "Alcohol"],
         "uses": ["Depression", "Smoking cessation"],
-         "sold":89, 
+        "available":100, 
+        "sold":89, 
         "warnings": ["May increase the risk of suicidal thoughts", "Avoid alcohol"]
       },
       {
@@ -394,7 +416,8 @@
         "actions": "Replaces or supplements endogenous thyroid hormones.",
         "interactions": ["Calcium supplements", "Warfarin"],
         "uses": ["Hypothyroidism"],
-         "sold":76, 
+        "available":100, 
+        "sold":76, 
         "warnings": [
           "Individualize dose based on thyroid function tests",
           "Take on an empty stomach"
@@ -412,7 +435,8 @@
         "actions": "Inhibits sodium reabsorption in the distal convoluted tubule.",
         "interactions": ["Lithium", "NSAIDs"],
         "uses": ["High blood pressure", "Edema"],
-         "sold":58, 
+        "available":100, 
+        "sold":58, 
         "warnings": ["Monitor electrolytes", "May increase blood glucose levels"]
       },
       {
@@ -432,6 +456,7 @@
           "Allergic reactions",
           "Autoimmune diseases"
         ],
+        "available":100,
         "sold":90, 
         "warnings": ["Do not abruptly discontinue", "May cause adrenal suppression"]
       },
@@ -452,6 +477,7 @@
           "Allergic reactions",
           "Autoimmune diseases"
         ],
+        "available":100,
         "sold":84, 
         "warnings": ["Do not abruptly discontinue", "May cause adrenal suppression"]
       },
@@ -467,7 +493,8 @@
         "actions": "Inhibits the synthesis of vitamin K-dependent clotting factors.",
         "interactions": ["Aspirin", "NSAIDs"],
         "uses": ["Prevention of blood clots", "Stroke prevention"],
-         "sold":45, 
+        "available":100, 
+        "sold":45, 
         "warnings": ["Regular monitoring of INR required", "Many drug interactions"]
       },
       {
@@ -482,7 +509,8 @@
         "actions": "Blocks beta-1 adrenergic receptors, reducing heart rate and contractility.",
         "interactions": ["Calcium channel blockers", "Insulin"],
         "uses": ["High blood pressure", "Angina", "Heart failure"],
-         "sold":67, 
+        "available":100, 
+        "sold":67, 
         "warnings": [
           "Do not abruptly discontinue",
           "May mask symptoms of hypoglycemia"
@@ -500,7 +528,8 @@
         "actions": "Suppresses inflammation in the airways.",
         "interactions": ["Ketoconazole", "Ritonavir"],
         "uses": ["Asthma", "Allergic rhinitis", "Nasal polyps"],
-         "sold":43, 
+        "available":100, 
+        "sold":43, 
         "warnings": ["May cause local immunosuppression", "Rinse mouth after use"]
       },
       {
@@ -515,7 +544,8 @@
         "actions": "Binds to mu-opioid receptors in the CNS, altering the perception of pain.",
         "interactions": ["Benzodiazepines", "Alcohol"],
         "uses": ["Moderate to severe pain"],
-         "sold":35, 
+        "available":100, 
+        "sold":35, 
         "warnings": [
           "May cause respiratory depression",
           "Risk of addiction and misuse"
@@ -533,7 +563,8 @@
         "actions": "Stimulates beta-2 adrenergic receptors in the airway smooth muscle, resulting in bronchodilation.",
         "interactions": ["Beta-blockers", "MAOIs"],
         "uses": ["Asthma", "COPD"],
-         "sold":77, 
+        "available":100, 
+        "sold":77, 
         "warnings": ["Avoid excessive use", "May cause paradoxical bronchospasm"]
       },
       {
@@ -548,7 +579,8 @@
         "actions": "Enhances the effect of gamma-aminobutyric acid (GABA) in the brain.",
         "interactions": ["Alcohol", "Other CNS depressants"],
         "uses": ["Anxiety disorders", "Insomnia", "Seizures"],
-         "sold":87, 
+        "available":100, 
+        "sold":87, 
         "warnings": ["May cause dependence", "Avoid alcohol"]
       },
       {
@@ -563,7 +595,8 @@
         "actions": "Inhibits the reuptake of serotonin in the brain.",
         "interactions": ["MAOIs", "NSAIDs"],
         "uses": ["Depression", "Anxiety disorders"],
-         "sold":66, 
+        "available":100, 
+        "sold":66, 
         "warnings": [
           "May increase suicidal thoughts in children and young adults",
           "Avoid alcohol"
@@ -581,7 +614,8 @@
         "actions": "Inhibits the reuptake of serotonin and norepinephrine in the brain.",
         "interactions": ["MAOIs", "NSAIDs"],
         "uses": ["Depression", "Anxiety disorders", "Panic disorder"],
-         "sold":77, 
+        "available":100, 
+        "sold":77, 
         "warnings": [
           "May increase suicidal thoughts in children and young adults",
           "Avoid alcohol"
@@ -599,7 +633,8 @@
         "actions": "Antagonizes dopamine and serotonin receptors in the brain.",
         "interactions": ["Fluoxetine", "Quinidine"],
         "uses": ["Schizophrenia", "Bipolar disorder", "Autism spectrum disorder"],
-         "sold":88, 
+        "available":100, 
+        "sold":88, 
         "warnings": [
           "May increase the risk of suicidal thoughts in children and young adults",
           "Monitor for extrapyramidal symptoms"
@@ -617,7 +652,8 @@
         "actions": "Antagonizes dopamine and serotonin receptors in the brain.",
         "interactions": ["Fluoxetine", "Quinidine"],
         "uses": ["Schizophrenia", "Bipolar disorder", "Major depressive disorder"],
-         "sold":99, 
+        "available":100, 
+        "sold":99, 
         "warnings": [
           "May increase the risk of suicidal thoughts in children and young adults",
           "May cause orthostatic hypotension"
@@ -635,7 +671,8 @@
         "actions": "Blocks beta-1, beta-2, and alpha-1 adrenergic receptors.",
         "interactions": ["Calcium channel blockers", "Insulin"],
         "uses": ["High blood pressure", "Heart failure"],
-         "sold":95, 
+        "available":100, 
+        "sold":95, 
         "warnings": [
           "Do not abruptly discontinue",
           "May mask symptoms of hypoglycemia"
@@ -653,7 +690,8 @@
         "actions": "Suppresses inflammation in the airways.",
         "interactions": ["Ketoconazole", "Ritonavir"],
         "uses": ["Asthma", "Allergic rhinitis", "Inflammatory bowel disease"],
-         "sold":72, 
+        "available":100, 
+        "sold":72, 
         "warnings": ["May cause local immunosuppression", "Rinse mouth after use"]
       },
       {
@@ -668,7 +706,8 @@
         "actions": "Inhibits the reuptake of serotonin and norepinephrine in the brain.",
         "interactions": ["MAOIs", "NSAIDs"],
         "uses": ["Depression", "Anxiety disorders", "Fibromyalgia", "Chronic pain"],
-         "sold":43, 
+        "available":100, 
+        "sold":43, 
         "warnings": [
           "May increase suicidal thoughts in children and young adults",
           "Avoid alcohol"
@@ -686,7 +725,8 @@
         "actions": "Inhibits the reuptake of serotonin in the brain.",
         "interactions": ["MAOIs", "NSAIDs"],
         "uses": ["Depression", "Anxiety disorders"],
-         "sold":87, 
+        "available":100, 
+        "sold":87, 
         "warnings": [
           "May increase suicidal thoughts in children and young adults",
           "Avoid alcohol"
@@ -704,7 +744,8 @@
         "actions": "Binds to mu-opioid receptors in the CNS, altering the perception of pain.",
         "interactions": ["Benzodiazepines", "Alcohol"],
         "uses": ["Moderate to moderately severe pain"],
-         "sold":98, 
+        "available":100, 
+        "sold":98, 
         "warnings": [
           "May cause respiratory depression",
           "Risk of addiction and misuse"
@@ -726,6 +767,7 @@
         "actions": "Inhibits HMG-CoA reductase, reducing cholesterol synthesis.",
         "interactions": ["Grapefruit juice", "Warfarin"],
         "uses": ["High cholesterol", "Prevention of cardiovascular events"],
+        "available":100,
         "sold":68, 
 
         "warnings": ["Monitor liver function", "May increase blood glucose levels"]
@@ -742,7 +784,8 @@
         "actions": "Inhibits ACE, preventing the conversion of angiotensin I to angiotensin II.",
         "interactions": ["Potassium supplements", "Lithium"],
         "uses": ["High blood pressure", "Heart failure", "Diabetic nephropathy"],
-         "sold":45, 
+        "available":100, 
+        "sold":45, 
         "warnings": ["Monitor potassium levels", "Avoid in pregnancy"]
       },
       {
@@ -757,7 +800,8 @@
         "actions": "Decreases hepatic glucose production and increases insulin sensitivity.",
         "interactions": ["Iodinated contrast media", "Alcohol"],
         "uses": ["Type 2 diabetes mellitus"],
-         "sold":34, 
+        "available":100, 
+        "sold":34, 
         "warnings": [
           "Monitor renal function",
           "Discontinue before administering iodinated contrast"
@@ -778,6 +822,7 @@
           "Nausea and vomiting associated with chemotherapy",
           "Postoperative nausea and vomiting"
         ],
+        "available":100,
         "sold":76, 
 
         "warnings": [
@@ -802,6 +847,7 @@
           "Respiratory tract infections",
           "Skin infections"
         ],
+        "available":100,
         "sold":89, 
         "warnings": [
           "May cause Clostridium difficile-associated diarrhea",
@@ -820,7 +866,8 @@
         "actions": "Inhibits the reuptake of serotonin in the brain.",
         "interactions": ["MAOIs", "NSAIDs"],
         "uses": ["Depression", "Anxiety disorders"],
-         "sold":76, 
+        "available":100, 
+        "sold":76, 
         "warnings": [
           "May increase suicidal thoughts in children and young adults",
           "Avoid alcohol"
@@ -843,6 +890,7 @@
           "Skin infections",
           "Sexually transmitted infections"
         ],
+        "available":100,
         "sold":34, 
         "warnings": [
           "May cause QT prolongation",
@@ -865,6 +913,7 @@
           "Trichomoniasis",
           "Helicobacter pylori infection"
         ],
+        "available":100,
         "sold":76, 
 
         "warnings": [
@@ -884,7 +933,8 @@
         "actions": "Inhibits bacterial protein synthesis by binding to the 30S ribosomal subunit.",
         "interactions": ["Antacids", "Warfarin"],
         "uses": ["Acne", "Respiratory tract infections", "Lyme disease"],
-         "sold":87, 
+        "available":100, 
+        "sold":87, 
         "warnings": [
           "May cause tooth discoloration in children",
           "Avoid in pregnancy after 15 weeks"
@@ -907,6 +957,7 @@
           "Urinary tract infections",
           "Skin infections"
         ],
+        "available":100,
         "sold":77, 
         "warnings": [
           "May cause Clostridium difficile-associated diarrhea",
@@ -930,6 +981,7 @@
           "Respiratory tract infections",
           "Skin infections"
         ],
+        "available":100,
         "sold":33,
         "warnings": [
           "May cause tendinitis and tendon rupture",
@@ -948,7 +1000,8 @@
         "actions": "Blocks leukotriene receptors, reducing inflammation and bronchoconstriction.",
         "interactions": ["Phenobarbital", "Rifampin"],
         "uses": ["Asthma prevention", "Allergic rhinitis"],
-         "sold":22, 
+        "available":100, 
+        "sold":22, 
         "warnings": [
           "Not for acute asthma attacks",
           "Monitor for changes in mood or behavior"
@@ -966,7 +1019,8 @@
           "actions": "Paracetamol acts as an analgesic and antipyretic, while caffeine acts as a central nervous system stimulant.",
           "interactions": ["Alcohol", "Warfarin"],
           "uses": ["Pain relief", "Fever reduction"],
-           "sold":11, 
+          "available":100, 
+          "sold":11, 
           "warnings": ["Avoid excessive alcohol consumption", "May cause severe liver damage if taken in high doses"]
         },
         {
@@ -981,7 +1035,8 @@
           "actions": "Sitagliptin increases insulin release and decreases glucagon levels, while metformin decreases hepatic glucose production and increases insulin sensitivity.",
           "interactions": ["Alcohol", "Cimetidine"],
           "uses": ["Type 2 diabetes mellitus"],
-           "sold":7, 
+          "available":100, 
+          "sold":7, 
           "warnings": ["Monitor renal function", "Avoid excessive alcohol consumption"]
         },
         {
@@ -996,7 +1051,8 @@
           "actions": "Regulates bowel motility by modulating the activity of gastrointestinal smooth muscles.",
           "interactions": ["CNS depressants", "Alcohol"],
           "uses": ["Irritable bowel syndrome", "Gastrointestinal disorders"],
-           "sold":79, 
+          "available":100, 
+          "sold":79, 
           "warnings": ["May cause drowsiness", "Avoid driving or operating machinery if affected"]
         },
         {
@@ -1011,7 +1067,8 @@
           "actions": "Increases intestinal absorption of calcium and phosphate, promoting bone mineralization.",
           "interactions": ["Calcium supplements", "Thiazide diuretics"],
           "uses": ["Vitamin D deficiency", "Osteoporosis prevention"],
-           "sold":55, 
+          "available":100, 
+          "sold":55, 
           "warnings": ["Monitor blood calcium levels", "Avoid excessive intake to prevent toxicity"]
         },
         {
@@ -1026,7 +1083,8 @@
           "actions": "Suppresses gastric acid secretion by inhibiting the H+/K+ ATPase pump in the gastric parietal cells.",
           "interactions": ["Clopidogrel", "Warfarin"],
           "uses": ["GERD", "Peptic ulcers"],
-           "sold":59, 
+          "available":100, 
+          "sold":59, 
           "warnings": ["May increase risk of Clostridium difficile-associated diarrhea", "Long-term use may increase risk of bone fractures"]
         },
         {
@@ -1041,7 +1099,8 @@
           "actions": "Blocks dopamine receptors in the chemoreceptor trigger zone, reducing nausea and vomiting.",
           "interactions": ["Ketoconazole", "Erythromycin"],
           "uses": ["Nausea", "Vomiting", "Delayed gastric emptying"],
-           "sold":69, 
+          "available":100, 
+          "sold":69, 
           "warnings": ["May cause QT prolongation", "Use with caution in patients with heart conditions"]
         },
         {
@@ -1056,7 +1115,8 @@
           "actions": "Inhibits cyclooxygenase enzyme, thereby reducing prostaglandin synthesis.",
           "interactions": ["Aspirin", "Warfarin"],
           "uses": ["Pain relief", "Inflammatory conditions"],
-           "sold":79, 
+          "available":100, 
+          "sold":79, 
           "warnings": ["May increase risk of heart attack or stroke", "Avoid in late pregnancy"]
         },
         {
@@ -1071,7 +1131,8 @@
           "actions": "Supplements dietary calcium intake to maintain bone strength and prevent osteoporosis.",
           "interactions": ["Levothyroxine", "Iron supplements"],
           "uses": ["Calcium deficiency", "Osteoporosis prevention"],
-           "sold":59, 
+          "available":100, 
+          "sold":59, 
           "warnings": ["Avoid in patients with hypercalcemia", "Take with plenty of water to prevent constipation"]
         },
         {
@@ -1086,7 +1147,8 @@
           "actions": "Supplements dietary calcium intake to maintain bone strength and prevent osteoporosis.",
           "interactions": ["Levothyroxine", "Iron supplements"],
           "uses": ["Calcium deficiency", "Osteoporosis prevention"],
-           "sold":29, 
+          "available":100, 
+          "sold":29, 
           "warnings": ["Take with plenty of water to prevent constipation", "Avoid in patients with hypercalcemia"]
         }
         
