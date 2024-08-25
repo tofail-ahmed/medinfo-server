@@ -1,16 +1,16 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const cors=require("cors")
+const cors = require("cors");
+const bcrypt = require("bcrypt");
 
+app.use(cors());
+app.use(express.json());
 
-app.use(cors())
-app.use(express.json())
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
-
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-
-const uri = "mongodb+srv://medinfo:medinfo@cluster0.zhsy6ko.mongodb.net/?retryWrites=true&w=majority";
+const uri =
+  "mongodb+srv://medinfo:medinfo@cluster0.zhsy6ko.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -18,7 +18,7 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
 });
 
 async function run() {
@@ -395,8 +395,8 @@ async function run() {
     });
 
     //!--------------user------------------
-
-    app.post("/api/v1/add-user", async (req, res) => {
+    //*----------------------adding new user--------------
+    app.post("/api/v1/register", async (req, res) => {
       try {
         const { name, email, password } = req.body;
         const newUser = { name, email, password, role: "user" };
@@ -423,27 +423,69 @@ async function run() {
         });
       }
     });
-//*---user role upgration----------------
+    //*---user role upgration----------------
     app.put("/api/v1/user/:id", async (req, res) => {
       try {
         const id = req.params;
-      const {role}=req.body;
-      const filter={_id:new ObjectId(id)};
-      const updatedUser={$set:{role}};
-      const result=await user.updateOne(filter,updatedUser);
-      res.status(200).json({
-        success:true,
-        message:"User role updated successfully",
-        data:result
-      })
+        const { role } = req.body;
+        const filter = { _id: new ObjectId(id) };
+        const updatedUser = { $set: { role } };
+        const result = await user.updateOne(filter, updatedUser);
+        res.status(200).json({
+          success: true,
+          message: "User role updated successfully",
+          data: result,
+        });
       } catch (error) {
         res.status(500).json({
           success: false,
           message: "Internal server error",
         });
       }
-     
     });
+
+    //*---------user login------------------------------
+
+    app.post("/api/v1/login", async (req, res) => {
+      try {
+        const { email, password } = req.body;
+    
+        // Find the user by email
+        const userCred = await user.findOne({ email });
+    
+        // If the user does not exist
+        if (!userCred) {
+          return res.status(404).json({
+            success: false,
+            message: "Invalid user or email🚫",
+          });
+        }
+    
+        // Directly compare the entered password with the stored password (assuming passwords are stored in plain text, which is not recommended)
+        if (password !== userCred.password) {
+          return res.status(400).json({
+            success: false,
+            message: "Invalid Credentials",
+          });
+        }
+    
+        // If credentials are correct, respond with a success message
+        return res.status(200).json({
+          success: true,
+          message: "Logged in successfully",
+        });
+    
+      } catch (error) {
+        // Handle any server errors
+        console.error("Login error:", error.message);
+        return res.status(500).json({
+          success: false,
+          message: "Login server error",
+        });
+      }
+    });
+    
+    
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
