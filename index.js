@@ -28,6 +28,7 @@ async function run() {
 
     const db = client.db("medinfo");
     const medicine = db.collection("medicines");
+    const user = db.collection("users");
 
     //* getting all medicines-------------------------
     app.get("/api/v1/medicines", async (req, res) => {
@@ -391,6 +392,57 @@ async function run() {
           message: "Internal server error.",
         });
       }
+    });
+
+    //!--------------user------------------
+
+    app.post("/api/v1/add-user", async (req, res) => {
+      try {
+        const { name, email, password } = req.body;
+        const newUser = { name, email, password, role: "user" };
+
+        const existingUser = await user.findOne({ email });
+        if (existingUser) {
+          return res.status(409).json({
+            success: false,
+            message: "A user with this email already exists.",
+          });
+        }
+
+        const result = await user.insertOne(newUser);
+        res.status(201).json({
+          success: true,
+          message: "New user registered successfully",
+          data: result, // Return the inserted document
+        });
+      } catch (error) {
+        console.error("Error deleting medicine:", error);
+        res.status(500).json({
+          success: false,
+          message: "Internal server error.",
+        });
+      }
+    });
+//*---user role upgration----------------
+    app.put("/api/v1/user/:id", async (req, res) => {
+      try {
+        const id = req.params;
+      const {role}=req.body;
+      const filter={_id:new ObjectId(id)};
+      const updatedUser={$set:{role}};
+      const result=await user.updateOne(filter,updatedUser);
+      res.status(200).json({
+        success:true,
+        message:"User role updated successfully",
+        data:result
+      })
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: "Internal server error",
+        });
+      }
+     
     });
 
     // Send a ping to confirm a successful connection
