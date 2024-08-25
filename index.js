@@ -399,8 +399,8 @@ async function run() {
     app.post("/api/v1/register", async (req, res) => {
       try {
         const { name, email, password } = req.body;
-        const newUser = { name, email, password, role: "user" };
-
+    
+        // Check if a user with this email already exists
         const existingUser = await user.findOne({ email });
         if (existingUser) {
           return res.status(409).json({
@@ -408,15 +408,25 @@ async function run() {
             message: "A user with this email already exists.",
           });
         }
-
+    
+        // Hash the password before saving it
+        const saltRounds = 10; // You can adjust the salt rounds (more rounds = more secure, but slower)
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+    
+        // Create a new user object with the hashed password
+        const newUser = { name, email, password: hashedPassword, role: "user" };
+    
+        // Insert the new user into the database
         const result = await user.insertOne(newUser);
+    
+        // Respond with success message and the new user data
         res.status(201).json({
           success: true,
           message: "New user registered successfully",
           data: result, // Return the inserted document
         });
       } catch (error) {
-        console.error("Error deleting medicine:", error);
+        console.error("Error registering user:", error);
         res.status(500).json({
           success: false,
           message: "Internal server error.",
