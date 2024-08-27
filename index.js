@@ -427,7 +427,7 @@ async function run() {
         });
       } catch (error) {
         console.error("Error registering user:", error);
-        res.status(500).json({
+        res.status(409).json({
           success: false,
           message: "Internal server error.",
         });
@@ -447,7 +447,7 @@ async function run() {
           data: result,
         });
       } catch (error) {
-        res.status(500).json({
+        res.status(409).json({
           success: false,
           message: "Internal server error",
         });
@@ -459,36 +459,40 @@ async function run() {
     app.post("/api/v1/login", async (req, res) => {
       try {
         const { email, password } = req.body;
-    
+
         // Find the user by email
         const userCred = await user.findOne({ email });
-    
+        console.log(userCred);
+        console.log(password);
+
         // If the user does not exist
         if (!userCred) {
-          return res.status(404).json({
+          return res.status(409).json({
             success: false,
             message: "Invalid user or email🚫",
           });
         }
-    
-        // Directly compare the entered password with the stored password (assuming passwords are stored in plain text, which is not recommended)
-        if (password !== userCred.password) {
-          return res.status(400).json({
+
+        // Compare the entered password with the stored hashed password
+        const isMatch = await bcrypt.compare(password, userCred.password);
+        // If the password is incorrect
+        if (!isMatch) {
+          return res.status(409).json({
             success: false,
             message: "Invalid Credentials",
           });
         }
-    
+
         // If credentials are correct, respond with a success message
         return res.status(200).json({
           success: true,
           message: "Logged in successfully",
+          data: userCred,
         });
-    
       } catch (error) {
         // Handle any server errors
         console.error("Login error:", error.message);
-        return res.status(500).json({
+        return res.status(409).json({
           success: false,
           message: "Login server error",
         });
