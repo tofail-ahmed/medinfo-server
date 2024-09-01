@@ -498,8 +498,83 @@ async function run() {
         });
       }
     });
+
+    //*-------------------user details by email------------------------
+    app.get("/api/v1/userDetails/:email", async (req, res) => {
+      try {
+        const { email } = req.params; // Extract email from the route parameters
+    
+        // Query the database to find the user by email
+        const userCred = await user.findOne({ email });
+    
+        if (!userCred) {
+          return res.status(409).json({
+            success: false,
+            message: "User not found",
+          });
+        }
+    
+        // If user is found, return user details
+        res.status(200).json({
+          success: true,
+          data: userCred,
+        });
+      } catch (error) {
+        // Handle any server errors
+        console.error("Error fetching user by email:", error.message);
+        return res.status(409).json({
+          success: false,
+          message: "Server error",
+        });
+      }
+    });
     
     
+    
+//*----------get all user------------
+app.get("/api/v1/alluser", async (req, res) => {
+  try {
+    const alluser = await user.find({}, { projection: { password: 0 } }).toArray();
+
+    return res.status(200).json({
+      success: true,
+      message: "All users retrieved successfully",
+      data: alluser,
+    });
+  } catch (error) {
+    console.error("Error fetching users:", error.message);
+    return res.status(409).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+});
+
+//*---------------------delete user----------------
+app.delete("/api/v1/deleteUser/:id",async(req,res)=>{
+  try {
+    const id=req.params;
+   const filter={_id:new ObjectId(id)};
+   const result=await user.deleteOne(filter);
+   if(result.deletedCount===0){
+    return res.status(404).json({
+      success: false,
+      message: "User not found.",
+    });
+   }
+   res.status(200).json({
+    success: true,
+    message: "User deleted successfully."
+  });
+
+  } catch (error) {
+    console.error("Error fetching users:", error.message);
+    return res.status(409).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+})
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
