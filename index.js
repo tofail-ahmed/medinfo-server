@@ -194,7 +194,7 @@ async function run() {
         const result = await medicine.updateOne(filter, update);
 
         if (result.matchedCount === 0) {
-          return res.status(404).json({
+          return res.status(409).json({
             success: false,
             message: "Medicine not found",
           });
@@ -399,7 +399,7 @@ async function run() {
     app.post("/api/v1/register", async (req, res) => {
       try {
         const { name, email, password } = req.body;
-    
+
         // Check if a user with this email already exists
         const existingUser = await user.findOne({ email });
         if (existingUser) {
@@ -408,22 +408,22 @@ async function run() {
             message: "A user with this email already exists.",
           });
         }
-    
+
         // Hash the password before saving it
         const saltRounds = 10; // You can adjust the salt rounds (more rounds = more secure, but slower)
         const hashedPassword = await bcrypt.hash(password, saltRounds);
-    
+
         // Create a new user object with the hashed password
         const newUser = { name, email, password: hashedPassword, role: "user" };
-    
+
         // Insert the new user into the database
         const result = await user.insertOne(newUser);
-    
+        console.log(result);
         // Respond with success message and the new user data
         res.status(201).json({
           success: true,
           message: "New user registered successfully",
-          data: result, // Return the inserted document
+          data: newUser, // Return the inserted document
         });
       } catch (error) {
         console.error("Error registering user:", error);
@@ -434,10 +434,11 @@ async function run() {
       }
     });
     //*---user role upgration----------------
-    app.put("/api/v1/user/:id", async (req, res) => {
+    app.put("/api/v1/userRole/:id", async (req, res) => {
       try {
-        const id = req.params;
+        const { id } = req.params;
         const { role } = req.body;
+        console.log(role);
         const filter = { _id: new ObjectId(id) };
         const updatedUser = { $set: { role } };
         const result = await user.updateOne(filter, updatedUser);
@@ -503,17 +504,17 @@ async function run() {
     app.get("/api/v1/userDetails/:email", async (req, res) => {
       try {
         const { email } = req.params; // Extract email from the route parameters
-    
+
         // Query the database to find the user by email
         const userCred = await user.findOne({ email });
-    
+
         if (!userCred) {
           return res.status(409).json({
             success: false,
             message: "User not found",
           });
         }
-    
+
         // If user is found, return user details
         res.status(200).json({
           success: true,
@@ -528,53 +529,103 @@ async function run() {
         });
       }
     });
-    
-    
-    
-//*----------get all user------------
-app.get("/api/v1/alluser", async (req, res) => {
-  try {
-    const alluser = await user.find({}, { projection: { password: 0 } }).toArray();
 
-    return res.status(200).json({
-      success: true,
-      message: "All users retrieved successfully",
-      data: alluser,
-    });
-  } catch (error) {
-    console.error("Error fetching users:", error.message);
-    return res.status(409).json({
-      success: false,
-      message: "Server error",
-    });
-  }
-});
+    //*----------get all user------------
+    app.get("/api/v1/alluser", async (req, res) => {
+      try {
+        const alluser = await user
+          .find({}, { projection: { password: 0 } })
+          .toArray();
 
-//*---------------------delete user----------------
-app.delete("/api/v1/deleteUser/:id",async(req,res)=>{
-  try {
-    const id=req.params;
-   const filter={_id:new ObjectId(id)};
-   const result=await user.deleteOne(filter);
-   if(result.deletedCount===0){
-    return res.status(404).json({
-      success: false,
-      message: "User not found.",
+        return res.status(200).json({
+          success: true,
+          message: "All users retrieved successfully",
+          data: alluser,
+        });
+      } catch (error) {
+        console.error("Error fetching users:", error.message);
+        return res.status(409).json({
+          success: false,
+          message: "Server error",
+        });
+      }
     });
-   }
-   res.status(200).json({
-    success: true,
-    message: "User deleted successfully."
-  });
 
-  } catch (error) {
-    console.error("Error fetching users:", error.message);
-    return res.status(409).json({
-      success: false,
-      message: "Server error",
+    //*---------------------delete user----------------
+    app.delete("/api/v1/deleteUser/:id", async (req, res) => {
+      try {
+        const id = req.params;
+        const filter = { _id: new ObjectId(id) };
+        const result = await user.deleteOne(filter);
+        if (result.deletedCount === 0) {
+          return res.status(404).json({
+            success: false,
+            message: "User not found.",
+          });
+        }
+        res.status(200).json({
+          success: true,
+          message: "User deleted successfully.",
+        });
+      } catch (error) {
+        console.error("Error fetching users:", error.message);
+        return res.status(409).json({
+          success: false,
+          message: "Server error",
+        });
+      }
     });
-  }
-})
+
+    //*------update buy or add list------------
+    app.put("/api/v1/userPurchaseList/:id", async (req, res) => {
+      try {
+        const { id } = req.params;
+        const body = req.body;
+        const currentTime = new Date().toLocaleString(); // Get current date and time
+
+    
+        const filter = { _id: new ObjectId(id) };
+    
+        // Define the update operation
+        const update = {
+          $push: {
+            purchaseList: {
+              ...body,
+              purchasedAt: currentTime // Add current time to the purchase object
+            }
+          }
+        };
+    
+        // Use updateOne with $push and $setOnInsert to either push into an array or create it if it doesn't exist
+        const result = await user.updateOne(filter, update, { upsert: true });
+    
+        // console.log(result);
+        if (result.modifiedCount !== 1 && result.upsertedCount !== 1) {
+          res.status(409).json({
+            success: false,
+            message: "Unexpected error occurred",
+          });
+        }
+    
+        const updatedUser = await user.findOne(filter); // Fetch the updated document
+        res.status(200).json({
+          success: true,
+          message: `Medicine purchased successfully`,
+          data: updatedUser, // Return the updated user data
+        });
+      } catch (error) {
+        console.error("Error updating user purchase list:", error.message);
+        return res.status(409).json({
+          success: false,
+          message: "Server error",
+        });
+      }
+    });
+    
+
+
+
+
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
