@@ -463,8 +463,8 @@ async function run() {
 
         // Find the user by email
         const userCred = await user.findOne({ email });
-        console.log(userCred);
-        console.log(password);
+        // console.log(userCred);
+        // console.log(password);
 
         // If the user does not exist
         if (!userCred) {
@@ -581,37 +581,58 @@ async function run() {
       try {
         const { id } = req.params;
         const body = req.body;
+        console.log(body)
         const currentTime = new Date().toLocaleString(); // Get current date and time
 
-    
         const filter = { _id: new ObjectId(id) };
-    
+
         // Define the update operation
         const update = {
           $push: {
             purchaseList: {
               ...body,
-              purchasedAt: currentTime // Add current time to the purchase object
-            }
-          }
+              purchasedAt: currentTime, // Add current time to the purchase object
+            },
+          },
         };
-    
+
         // Use updateOne with $push and $setOnInsert to either push into an array or create it if it doesn't exist
         const result = await user.updateOne(filter, update, { upsert: true });
-    
-        // console.log(result);
+
+        console.log(result);
         if (result.modifiedCount !== 1 && result.upsertedCount !== 1) {
           res.status(409).json({
             success: false,
             message: "Unexpected error occurred",
           });
         }
-    
+
         const updatedUser = await user.findOne(filter); // Fetch the updated document
         res.status(200).json({
           success: true,
           message: `Medicine purchased successfully`,
           data: updatedUser, // Return the updated user data
+        });
+      } catch (error) {
+        console.error("Error updating user purchase list:", error.message);
+        return res.status(409).json({
+          success: false,
+          message: "Server error",
+        });
+      }
+    });
+
+    //*getting single usert details--------------
+
+    app.get("/api/v1/singleUser/:id", async (req, res) => {
+      try {
+        const { id } = req.params;
+        const filetr = { _id: new ObjectId(id) };
+        const result = await user.findOne(filetr);
+        res.status(200).json({
+          success: true,
+          message: "User found successfully",
+          data: result,
         });
       } catch (error) {
         console.error("Error updating user purchase list:", error.message);
