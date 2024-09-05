@@ -622,26 +622,46 @@ async function run() {
       }
     });
 
-    //*getting single usert details--------------
+    //*getting single user details--------------
 
     app.get("/api/v1/singleUser/:id", async (req, res) => {
       try {
         const { id } = req.params;
-        const filetr = { _id: new ObjectId(id) };
-        const result = await user.findOne(filetr);
+    
+        // Check if the id is valid before converting to ObjectId
+        if (!ObjectId.isValid(id)) {
+          return res.status(400).json({
+            success: false,
+            message: "Invalid ID format",
+          });
+        }
+    
+        // console.log("User ID from params:", id);
+    
+        const filter = { _id: new ObjectId(id) };
+        const result = await user.findOne(filter, { projection: { password: 0 } });
+    
+        if (!result) {
+          return res.status(404).json({
+            success: false,
+            message: "User not found",
+          });
+        }
+    
         res.status(200).json({
           success: true,
           message: "User found successfully",
           data: result,
         });
       } catch (error) {
-        console.error("Error updating user purchase list:", error.message);
-        return res.status(409).json({
+        console.error("Error finding user:", error.message);
+        return res.status(500).json({
           success: false,
           message: "Server error",
         });
       }
     });
+    
     
 
 
