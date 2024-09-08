@@ -89,7 +89,7 @@ async function run() {
         const query = { _id: new ObjectId(id) };
         const SingleMedicine = await medicine.findOne(query);
         if (!SingleMedicine) {
-          return res.status(404).json({
+          return res.status(409).json({
             success: false,
             message: "Project not found",
           });
@@ -101,7 +101,7 @@ async function run() {
         });
       } catch (error) {
         console.error("Error fetching project:", error);
-        res.status(500).json({
+        res.status(409).json({
           success: false,
           message: "Internal server error",
         });
@@ -183,44 +183,46 @@ async function run() {
     });
 
     //* updating or adding lastSoldDate--------------------------
-    app.put("/api/v1/medicine/lastSoldDate/:id", async (req, res) => {
-      try {
-        const id = req.params.id;
-        const currentDate = new Date().toISOString().split("T")[0]; // Get the current date in YYYY-MM-DD format
+    // app.put("/api/v1/medicine/lastSoldDate/:id", async (req, res) => {
+    //   try {
+    //     const id = req.params.id;
+    //     // const currentDate = new Date().toISOString().split("T")[0]; //2024-09-08 // Get the current date in YYYY-MM-DD format
+    //     const currentTime = new Date().toLocaleString();
 
-        const filter = { _id: new ObjectId(id) };
-        const update = { $set: { lastSoldDate: currentDate } }; // Set or update the lastSoldDate field
+    //     const filter = { _id: new ObjectId(id) };
+    //     const update = { $set: { lastSoldDate: currentTime } }; // Set or update the lastSoldDate field
 
-        const result = await medicine.updateOne(filter, update);
+    //     const result = await medicine.updateOne(filter, update);
 
-        if (result.matchedCount === 0) {
-          return res.status(409).json({
-            success: false,
-            message: "Medicine not found",
-          });
-        }
+    //     if (result.matchedCount === 0) {
+    //       return res.status(409).json({
+    //         success: false,
+    //         message: "Medicine not found",
+    //       });
+    //     }
 
-        const updatedMedicine = await medicine.findOne(filter); // Fetch the updated document
+    //     const updatedMedicine = await medicine.findOne(filter); // Fetch the updated document
 
-        res.status(200).json({
-          success: true,
-          message: `lastSoldDate field updated successfully`,
-          data: updatedMedicine, // Return the updated medicine
-        });
-      } catch (error) {
-        console.error("Error updating lastSoldDate field:", error);
-        res.status(500).json({
-          success: false,
-          message: "Internal server error",
-        });
-      }
-    });
+    //     res.status(200).json({
+    //       success: true,
+    //       message: `lastSoldDate field updated successfully`,
+    //       data: updatedMedicine, // Return the updated medicine
+    //     });
+    //   } catch (error) {
+    //     console.error("Error updating lastSoldDate field:", error);
+    //     res.status(500).json({
+    //       success: false,
+    //       message: "Internal server error",
+    //     });
+    //   }
+    // });
 
     //* updating amountSold and available amount of specific medicine by id---------------
     app.put("/api/v1/medicine/sell/:id", async (req, res) => {
       try {
         const id = req.params.id;
         const { amountSold } = req.body;
+        const currentDate = new Date().toLocaleString(); 
 
         // Validate the amountSold value
         if (!amountSold || typeof amountSold !== "number") {
@@ -231,7 +233,8 @@ async function run() {
         }
 
         const filter = { _id: new ObjectId(id) };
-        const update = { $inc: { sold: amountSold, available: -amountSold } }; // Increment the existing 'sold' field by the amountSold
+        const update = { $set: { lastSoldDate: currentDate },
+        $inc: { sold: amountSold, available: -amountSold } }; // Increment the existing 'sold' field by the amountSold
 
         const result = await medicine.updateOne(filter, update);
 
@@ -257,6 +260,43 @@ async function run() {
         });
       }
     });
+
+    //*getting meds with specific field-------------------
+    app.get("/api/v1/withLastSold", async (req, res) => {
+      try {
+        // Query to find all medicines that have the 'lastSoldDate' field
+        const medicinesWithLastSold = await medicine.find({ lastSoldDate: { $exists: true } }).toArray();
+    
+        // Log the result to check if data exists
+        // console.log("Medicines found:", medicinesWithLastSold);
+        // console.log(typeof medicinesWithLastSold); // should be "object"
+        // console.log(Array.isArray(medicinesWithLastSold)); // should be true
+        const medNum=medicinesWithLastSold.length;
+        if (medicinesWithLastSold.length === 0) {
+          return res.status(404).json({
+            success: false,
+            // message:`${medNum} latest sold medicines found successfully`,
+            message: "No medicines found with the lastSoldDate field",
+          });
+        }
+    
+        res.status(200).json({
+          success: true,
+          message:`${medNum} latest sold medicines found successfully`,
+          data: medicinesWithLastSold,
+        });
+      } catch (error) {
+        console.error("Error fetching medicines with lastSoldDate:", error);
+        res.status(500).json({
+          success: false,
+          message: "Internal server error",
+        });
+      }
+    });
+    
+
+   
+    
 
     //* getting latest medicines on lastSoldDate -----------------
     app.get("/api/v1/medicines/latestSold", async (req, res) => {
