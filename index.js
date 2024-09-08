@@ -265,7 +265,7 @@ async function run() {
     app.get("/api/v1/withLastSold", async (req, res) => {
       try {
         // Query to find all medicines that have the 'lastSoldDate' field
-        const medicinesWithLastSold = await medicine.find({ lastSoldDate: { $exists: true } }).toArray();
+        const medicinesWithLastSold = await medicine.find({ lastSoldDate: { $exists: true } }).sort({ lastSoldDate: -1 }) .toArray();
     
         // Log the result to check if data exists
         // console.log("Medicines found:", medicinesWithLastSold);
