@@ -30,7 +30,7 @@ async function run() {
     const medicine = db.collection("medicines");
     const user = db.collection("users");
 
-    //* getting all medicines-------------------------
+    //* 1. getting all medicines-------------------------
     app.get("/api/v1/medicines", async (req, res) => {
       try {
         const medicines = await medicine.find().toArray();
@@ -49,7 +49,7 @@ async function run() {
       }
     });
 
-    //* getting medicines by name, company, generic------------
+    //* 2. getting medicines by name, company, generic------------
     app.get("/api/v1/medicines/search/:term", async (req, res) => {
       const term = req.params.term;
       const limit = parseInt(req.query.limit, 10) || 10; // Default limit is 10 if not specified
@@ -81,7 +81,7 @@ async function run() {
         });
       }
     });
-    //* getting a specific medicine by id-------------------
+    //* 3. getting a specific medicine by id-------------------
     app.get("/api/v1/singleMedicine/:id", async (req, res) => {
       try {
         const id = req.params.id;
@@ -108,7 +108,7 @@ async function run() {
       }
     });
 
-    //* getting top 20 medicines by sold-----------------------
+    //* 4. getting top 20 medicines by sold-----------------------
     app.get("/api/v1/medicines/top", async (req, res) => {
       try {
         const topMedicines = await medicine
@@ -130,7 +130,9 @@ async function run() {
         });
       }
     });
-    //* updating a specific medicine by id
+
+
+    //* 5. updating a specific medicine by id
     app.put("/api/v1/medicine/:id", async (req, res) => {
       try {
         const id = req.params.id;
@@ -152,7 +154,7 @@ async function run() {
       }
     });
 
-    //* deleting any specific field of a specific medicine------------------
+    //* 6. deleting any specific field of a specific medicine------------------
     app.delete("/api/v1/fieldDelete/:id/:field", async (req, res) => {
       const { id, field } = req.params;
 
@@ -182,7 +184,7 @@ async function run() {
       }
     });
 
-    //* updating or adding lastSoldDate--------------------------
+    //* 7.  updating or adding lastSoldDate--------------------------
     // app.put("/api/v1/medicine/lastSoldDate/:id", async (req, res) => {
     //   try {
     //     const id = req.params.id;
@@ -217,7 +219,7 @@ async function run() {
     //   }
     // });
 
-    //* updating amountSold and available amount of specific medicine by id---------------
+    //* 8. updating amountSold and available amount of specific medicine by id---------------
     app.put("/api/v1/medicine/sell/:id", async (req, res) => {
       try {
         const id = req.params.id;
@@ -261,7 +263,7 @@ async function run() {
       }
     });
 
-    //*getting meds with specific field-------------------
+    //* 9. getting meds with specific field-------------------
     app.get("/api/v1/withLastSold", async (req, res) => {
       try {
         // Query to find all medicines that have the 'lastSoldDate' field
@@ -298,7 +300,7 @@ async function run() {
    
     
 
-    //* getting latest medicines on lastSoldDate -----------------
+    //* 10. getting latest medicines on lastSoldDate -----------------
     app.get("/api/v1/medicines/latestSold", async (req, res) => {
       try {
         const latestMedicines = await medicine
@@ -323,7 +325,7 @@ async function run() {
       }
     });
 
-    //* adding new medicine-----------
+    //* 11. adding new medicine-----------
     app.post("/api/v1/medicines", async (req, res) => {
       try {
         const {
@@ -337,8 +339,9 @@ async function run() {
           actions,
           interactions,
           uses,
-          sold,
+          available,
           warnings,
+
         } = req.body;
 
         // Validate required fields
@@ -376,9 +379,10 @@ async function run() {
           actions: actions || "", // Default to empty string if not provided
           interactions: interactions || [], // Default to empty array if not provided
           uses: uses || [], // Default to empty array if not provided
-          sold: sold || 0, // Default sold is 0 if not provided
+          sold: 0, // Default sold is 0 if not provided
+          available:available,
           warnings: warnings || [], // Default to empty array if not provided
-          createdAt: new Date().toISOString().split("T")[0], // Add a timestamp for when the medicine was created
+          createdAt: new Date().toLocaleString(), // Add a timestamp for when the medicine was created
         };
 
         // Insert the new medicine into the collection
@@ -398,7 +402,7 @@ async function run() {
       }
     });
 
-    //* deleting a medicine by id-------------
+    //* 12. deleting a medicine by id-------------
     app.delete("/api/v1/medicineDelete/:id", async (req, res) => {
       try {
         const id = req.params.id;
@@ -435,7 +439,7 @@ async function run() {
     });
 
     //!--------------user------------------
-    //*----------------------adding new user--------------
+    //* 13. ----------------------adding new user--------------
     app.post("/api/v1/register", async (req, res) => {
       try {
         const { name, email, password } = req.body;
@@ -473,7 +477,8 @@ async function run() {
         });
       }
     });
-    //*---user role upgration----------------
+
+    //* 14. ---user role upgration----------------
     app.put("/api/v1/userRole/:id", async (req, res) => {
       try {
         const { id } = req.params;
@@ -495,7 +500,7 @@ async function run() {
       }
     });
 
-    //*---------user login------------------------------
+    //* 15. ---------user login------------------------------
 
     app.post("/api/v1/login", async (req, res) => {
       try {
@@ -540,7 +545,7 @@ async function run() {
       }
     });
 
-    //*-------------------user details by email------------------------
+    //* 16. -------------------user details by email------------------------
     app.get("/api/v1/userDetails/:email", async (req, res) => {
       try {
         const { email } = req.params; // Extract email from the route parameters
@@ -570,7 +575,7 @@ async function run() {
       }
     });
 
-    //*----------get all user------------
+    //* 17. ----------get all user------------
     app.get("/api/v1/alluser", async (req, res) => {
       try {
         const alluser = await user
@@ -591,7 +596,7 @@ async function run() {
       }
     });
 
-    //*---------------------delete user----------------
+    //* 18. ---------------------delete user----------------
     app.delete("/api/v1/deleteUser/:id", async (req, res) => {
       try {
         const id = req.params;
@@ -616,7 +621,7 @@ async function run() {
       }
     });
 
-    //*------update buy or add list------------
+    //* 19. ------update buy or add list------------
     app.put("/api/v1/userPurchaseList/:id", async (req, res) => {
       try {
         const { id } = req.params;
@@ -662,7 +667,7 @@ async function run() {
       }
     });
 
-    //*getting single user details--------------
+    //* 20. getting single user details--------------
 
     app.get("/api/v1/singleUser/:id", async (req, res) => {
       try {
