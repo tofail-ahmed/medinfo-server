@@ -138,21 +138,37 @@ async function run() {
         const id = req.params.id;
         console.log(id);
         const { ...fields } = req.body;
+        // console.log(req.body);
+
+        const currentDate = new Date().toLocaleString();
         const filter = { _id: new ObjectId(id) };
-        const updatedBlog = { $set: { ...fields } };
+        // console.log("filter", filter);
+
+        const updatedBlog = { $set: { ...fields, lastUpdated: currentDate } };
         const result = await medicine.updateOne(filter, updatedBlog);
+        // console.log("result", result);
+
+        if (result.matchedCount === 0) {
+          return res.status(409).json({
+            success: false,
+            message: "Medicine not found",
+          });
+        }
+
         res.status(200).json({
           success: true,
           message: "Medicine updated successfully",
           data: result,
         });
       } catch (error) {
-        res.status(500).json({
+        console.error("Update error:", error); // Log the actual error
+        res.status(409).json({
           success: false,
           message: "Internal server error",
         });
       }
     });
+    
 
     //* 6. deleting any specific field of a specific medicine------------------
     app.delete("/api/v1/fieldDelete/:id/:field", async (req, res) => {
