@@ -1,0 +1,2553 @@
+[
+  {
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd13"
+  },
+  "id": 2,
+  "medicine_name": "Ibuprofen",
+  "generic_name": "Ibuprofen",
+  "company_name": "Advil",
+  "alt_medicines": [
+    "Motrin",
+    "Nurofen"
+  ],
+  "description": "A nonsteroidal anti-inflammatory drug (NSAID) used for pain relief, fever reduction, and anti-inflammatory effects.",
+  "doses": "200-400 mg every 4-6 hours as needed.",
+  "side_effects": [
+    "Stomach pain",
+    "Heartburn",
+    "Nausea"
+  ],
+  "actions": "Inhibits cyclooxygenase (COX) enzymes involved in prostaglandin synthesis.",
+  "interactions": [
+    "Aspirin",
+    "Blood thinners"
+  ],
+  "uses": [
+    "Pain relief",
+    "Fever reduction",
+    "Inflammation reduction"
+  ],
+  "available": 490,
+  "sold": 55,
+  "warnings": [
+    "Take with food to avoid stomach upset",
+    "Avoid in patients with heart disease"
+  ],
+  "lastSoldDate": "9/10/2024, 2:47:07 PM",
+  "lastUpdated": "9/10/2024, 2:45:59 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd1f"
+  },
+  "id": 14,
+  "medicine_name": "Ciprofloxacin",
+  "generic_name": "Ciprofloxacin",
+  "company_name": "Cipro",
+  "alt_medicines": [
+    "Ciloxan",
+    "Ciproxin"
+  ],
+  "description": "An antibiotic used to treat a variety of bacterial infections including urinary tract infections, pneumonia, and skin infections.",
+  "doses": "250-750 mg every 12 hours.",
+  "side_effects": [
+    "Nausea",
+    "Diarrhea",
+    "Headache"
+  ],
+  "actions": "Inhibits bacterial DNA gyrase and topoisomerase IV.",
+  "interactions": [
+    "Warfarin",
+    "Theophylline"
+  ],
+  "uses": [
+    "Bacterial infections",
+    "Urinary tract infections",
+    "Pneumonia"
+  ],
+  "available": 68,
+  "sold": 47,
+  "warnings": [
+    "May increase the risk of tendon rupture",
+    "Avoid in children and pregnant women"
+  ],
+  "lastSoldDate": "9/8/2024, 10:41:53 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd12"
+  },
+  "id": 51,
+  "medicine_name": "Paracetamol Forte 665mg",
+  "generic_name": "Paracetamol",
+  "company_name": "Albion Laboratories Ltd.",
+  "alt_medicines": [
+    "Panadol",
+    "Crocin"
+  ],
+  "description": "A common pain reliever and fever reducer.",
+  "doses": "500 mg every 4-6 hours as needed.",
+  "side_effects": [
+    "Nausea",
+    "Rash",
+    "Liver damage in high doses"
+  ],
+  "actions": "Inhibits the synthesis of prostaglandins in the brain.",
+  "interactions": [
+    "Alcohol",
+    "Warfarin"
+  ],
+  "uses": [
+    "Pain relief",
+    "Fever reduction"
+  ],
+  "available": 80,
+  "sold": 40,
+  "warnings": [
+    "Avoid excessive alcohol consumption",
+    "Do not exceed 4000 mg per day"
+  ],
+  "lastSoldDate": "9/10/2024, 2:46:50 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd1d"
+  },
+  "id": 12,
+  "medicine_name": "Alprazolam",
+  "generic_name": "Alprazolam",
+  "company_name": "Xanax",
+  "alt_medicines": [
+    "Niravam",
+    "Alprax"
+  ],
+  "description": "A benzodiazepine used to treat anxiety disorders and panic attacks.",
+  "doses": "0.25-2 mg two to three times daily.",
+  "side_effects": [
+    "Drowsiness",
+    "Dizziness",
+    "Headache"
+  ],
+  "actions": "Enhances the effect of gamma-aminobutyric acid (GABA) in the brain.",
+  "interactions": [
+    "Alcohol",
+    "Other CNS depressants"
+  ],
+  "uses": [
+    "Anxiety disorders",
+    "Panic attacks"
+  ],
+  "available": 98,
+  "sold": 69,
+  "warnings": [
+    "May cause dependence",
+    "Avoid alcohol"
+  ],
+  "lastSoldDate": "9/8/2024, 10:42:31 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd2a"
+  },
+  "id": 24,
+  "medicine_name": "Prednisone",
+  "generic_name": "Prednisone",
+  "company_name": "Deltasone",
+  "alt_medicines": [
+    "Cortan",
+    "Meticorten"
+  ],
+  "description": "A corticosteroid used to treat inflammation, allergic reactions, autoimmune diseases, and adrenal insufficiency.",
+  "doses": "5-60 mg once daily.",
+  "side_effects": [
+    "Weight gain",
+    "Insomnia",
+    "Increased appetite"
+  ],
+  "actions": "Suppresses inflammation and the immune response.",
+  "interactions": [
+    "NSAIDs",
+    "Warfarin"
+  ],
+  "uses": [
+    "Inflammatory conditions",
+    "Allergic reactions",
+    "Autoimmune diseases"
+  ],
+  "available": 88,
+  "sold": 96,
+  "warnings": [
+    "Do not abruptly discontinue",
+    "May cause adrenal suppression"
+  ],
+  "lastSoldDate": "9/8/2024, 10:42:20 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd31"
+  },
+  "id": 31,
+  "medicine_name": "Citalopram",
+  "generic_name": "Citalopram",
+  "company_name": "Celexa",
+  "alt_medicines": [
+    "Cipramil",
+    "Seropram"
+  ],
+  "description": "A selective serotonin reuptake inhibitor (SSRI) used to treat depression and anxiety disorders.",
+  "doses": "20-40 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Insomnia",
+    "Sexual dysfunction"
+  ],
+  "actions": "Inhibits the reuptake of serotonin in the brain.",
+  "interactions": [
+    "MAOIs",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Depression",
+    "Anxiety disorders"
+  ],
+  "available": 95,
+  "sold": 71,
+  "warnings": [
+    "May increase suicidal thoughts in children and young adults",
+    "Avoid alcohol"
+  ],
+  "lastSoldDate": "9/8/2024, 10:36:24 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd3b"
+  },
+  "id": 41,
+  "medicine_name": "Lisinopril",
+  "generic_name": "Lisinopril",
+  "company_name": "Zestril",
+  "alt_medicines": [
+    "Prinivil"
+  ],
+  "description": "An angiotensin-converting enzyme (ACE) inhibitor used to treat high blood pressure, heart failure, and diabetic nephropathy.",
+  "doses": "10-40 mg once daily.",
+  "side_effects": [
+    "Dry cough",
+    "Hypotension",
+    "Hyperkalemia"
+  ],
+  "actions": "Inhibits ACE, preventing the conversion of angiotensin I to angiotensin II.",
+  "interactions": [
+    "Potassium supplements",
+    "Lithium"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Heart failure",
+    "Diabetic nephropathy"
+  ],
+  "available": 95,
+  "sold": 50,
+  "warnings": [
+    "Monitor potassium levels",
+    "Avoid in pregnancy"
+  ],
+  "lastSoldDate": "9/8/2024, 10:36:09 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd49"
+  },
+  "id": 55,
+  "medicine_name": "D-Cap 2000",
+  "generic_name": "Cholecalciferol",
+  "brand_name": "D-Cap",
+  "alt_medicines": [
+    "D3-2000 IU",
+    "Bio-D-Mulsion Forte"
+  ],
+  "description": "A vitamin D supplement used to treat or prevent vitamin D deficiency.",
+  "doses": "2000 IU (50 mcg) once daily.",
+  "side_effects": [
+    "Hypercalcemia",
+    "Nausea",
+    "Weakness"
+  ],
+  "actions": "Increases intestinal absorption of calcium and phosphate, promoting bone mineralization.",
+  "interactions": [
+    "Calcium supplements",
+    "Thiazide diuretics"
+  ],
+  "uses": [
+    "Vitamin D deficiency",
+    "Osteoporosis prevention"
+  ],
+  "available": 96,
+  "sold": 59,
+  "warnings": [
+    "Monitor blood calcium levels",
+    "Avoid excessive intake to prevent toxicity"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd4c"
+  },
+  "id": 58,
+  "medicine_name": "Tufnil",
+  "generic_name": "Tolfenamic Acid",
+  "brand_name": "Tufnil",
+  "alt_medicines": [
+    "Clotan",
+    "Tufcyn"
+  ],
+  "description": "A nonsteroidal anti-inflammatory drug (NSAID) used to relieve pain and inflammation in conditions such as arthritis and menstrual pain.",
+  "doses": "200-400 mg twice daily.",
+  "side_effects": [
+    "Nausea",
+    "Headache",
+    "Gastric irritation"
+  ],
+  "actions": "Inhibits cyclooxygenase enzyme, thereby reducing prostaglandin synthesis.",
+  "interactions": [
+    "Aspirin",
+    "Warfarin"
+  ],
+  "uses": [
+    "Pain relief",
+    "Inflammatory conditions"
+  ],
+  "available": 100,
+  "sold": 79,
+  "warnings": [
+    "May increase risk of heart attack or stroke",
+    "Avoid in late pregnancy"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd15"
+  },
+  "id": 4,
+  "medicine_name": "Cetirizine",
+  "generic_name": "Cetirizine",
+  "company_name": "Zyrtec",
+  "alt_medicines": [
+    "Alleroff",
+    "Reactine"
+  ],
+  "description": "An antihistamine used to relieve allergy symptoms.",
+  "doses": "5-10 mg once daily.",
+  "side_effects": [
+    "Drowsiness",
+    "Dry mouth",
+    "Headache"
+  ],
+  "actions": "Blocks histamine H1 receptors.",
+  "interactions": [
+    "Alcohol",
+    "Sedatives"
+  ],
+  "uses": [
+    "Allergy relief",
+    "Hay fever",
+    "Urticaria"
+  ],
+  "available": 87,
+  "sold": 54,
+  "warnings": [
+    "May cause drowsiness",
+    "Avoid driving if affected"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd2b"
+  },
+  "id": 25,
+  "medicine_name": "Warfarin",
+  "generic_name": "Warfarin",
+  "company_name": "Coumadin",
+  "alt_medicines": [
+    "Jantoven",
+    "Marevan"
+  ],
+  "description": "An anticoagulant used to prevent blood clots and stroke.",
+  "doses": "2-10 mg once daily.",
+  "side_effects": [
+    "Bleeding",
+    "Bruising",
+    "Hair loss"
+  ],
+  "actions": "Inhibits the synthesis of vitamin K-dependent clotting factors.",
+  "interactions": [
+    "Aspirin",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Prevention of blood clots",
+    "Stroke prevention"
+  ],
+  "available": 95,
+  "sold": 50,
+  "warnings": [
+    "Regular monitoring of INR required",
+    "Many drug interactions"
+  ],
+  "lastSoldDate": "2024-09-08"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd2d"
+  },
+  "id": 27,
+  "medicine_name": "Fluticasone",
+  "generic_name": "Fluticasone",
+  "company_name": "Flonase",
+  "alt_medicines": [
+    "Flixonase",
+    "Flixotide"
+  ],
+  "description": "A corticosteroid used to treat asthma, allergic rhinitis, and nasal polyps.",
+  "doses": "50-500 mcg inhalation twice daily.",
+  "side_effects": [
+    "Nasal irritation",
+    "Nosebleeds",
+    "Sore throat"
+  ],
+  "actions": "Suppresses inflammation in the airways.",
+  "interactions": [
+    "Ketoconazole",
+    "Ritonavir"
+  ],
+  "uses": [
+    "Asthma",
+    "Allergic rhinitis",
+    "Nasal polyps"
+  ],
+  "available": 95,
+  "sold": 48,
+  "warnings": [
+    "May cause local immunosuppression",
+    "Rinse mouth after use"
+  ],
+  "lastSoldDate": "2024-09-08"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd33"
+  },
+  "id": 33,
+  "medicine_name": "Risperidone",
+  "generic_name": "Risperidone",
+  "company_name": "Risperdal",
+  "alt_medicines": [
+    "Risperdal Consta",
+    "Risperdal M-TAB"
+  ],
+  "description": "An atypical antipsychotic used to treat schizophrenia, bipolar disorder, and irritability associated with autism.",
+  "doses": "1-6 mg once daily.",
+  "side_effects": [
+    "Weight gain",
+    "Sedation",
+    "Extrapyramidal symptoms"
+  ],
+  "actions": "Antagonizes dopamine and serotonin receptors in the brain.",
+  "interactions": [
+    "Fluoxetine",
+    "Quinidine"
+  ],
+  "uses": [
+    "Schizophrenia",
+    "Bipolar disorder",
+    "Autism spectrum disorder"
+  ],
+  "available": 95,
+  "sold": 93,
+  "warnings": [
+    "May increase the risk of suicidal thoughts in children and young adults",
+    "Monitor for extrapyramidal symptoms"
+  ],
+  "lastSoldDate": "2024-09-08"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd37"
+  },
+  "id": 37,
+  "medicine_name": "Duloxetine",
+  "generic_name": "Duloxetine",
+  "company_name": "Cymbalta",
+  "alt_medicines": [
+    "Yentreve",
+    "Duzela"
+  ],
+  "description": "A serotonin-norepinephrine reuptake inhibitor (SNRI) used to treat depression, anxiety disorders, fibromyalgia, and chronic pain.",
+  "doses": "40-60 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Dry mouth",
+    "Insomnia"
+  ],
+  "actions": "Inhibits the reuptake of serotonin and norepinephrine in the brain.",
+  "interactions": [
+    "MAOIs",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Depression",
+    "Anxiety disorders",
+    "Fibromyalgia",
+    "Chronic pain"
+  ],
+  "available": 95,
+  "sold": 48,
+  "warnings": [
+    "May increase suicidal thoughts in children and young adults",
+    "Avoid alcohol"
+  ],
+  "lastSoldDate": "2024-09-08"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd41"
+  },
+  "id": 47,
+  "medicine_name": "Metronidazole",
+  "generic_name": "Metronidazole",
+  "company_name": "Flagyl",
+  "alt_medicines": [
+    "Metrocream",
+    "Metrogel"
+  ],
+  "description": "A nitroimidazole antibiotic used to treat bacterial and protozoal infections such as bacterial vaginosis, trichomoniasis, and Helicobacter pylori infection.",
+  "doses": "500 mg twice daily for 7 days.",
+  "side_effects": [
+    "Nausea",
+    "Metallic taste",
+    "Peripheral neuropathy"
+  ],
+  "actions": "Inhibits nucleic acid synthesis in susceptible organisms.",
+  "interactions": [
+    "Alcohol",
+    "Warfarin"
+  ],
+  "uses": [
+    "Bacterial vaginosis",
+    "Trichomoniasis",
+    "Helicobacter pylori infection"
+  ],
+  "available": 95,
+  "sold": 81,
+  "warnings": [
+    "Disulfiram-like reaction with alcohol",
+    "Avoid during first trimester of pregnancy"
+  ],
+  "lastSoldDate": "9/8/2024, 10:36:40 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd45"
+  },
+  "id": 52,
+  "medicine_name": "Monas 10mg",
+  "generic_name": "Montelukast",
+  "brand_name": "Monas",
+  "alt_medicines": [
+    "Singulair",
+    "Monteflo"
+  ],
+  "description": "A leukotriene receptor antagonist used to prevent and treat asthma and allergies.",
+  "doses": "10 mg once daily in the evening.",
+  "side_effects": [
+    "Headache",
+    "Dizziness",
+    "Abdominal pain"
+  ],
+  "actions": "Blocks leukotriene receptors, reducing inflammation and bronchoconstriction.",
+  "interactions": [
+    "Phenobarbital",
+    "Rifampin"
+  ],
+  "uses": [
+    "Asthma prevention",
+    "Allergic rhinitis"
+  ],
+  "available": 95,
+  "sold": 27,
+  "warnings": [
+    "Not for acute asthma attacks",
+    "Monitor for changes in mood or behavior"
+  ],
+  "lastSoldDate": "9/8/2024, 8:19:37 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd4a"
+  },
+  "id": 56,
+  "medicine_name": "Exium 20",
+  "generic_name": "Esomeprazole",
+  "brand_name": "Exium",
+  "alt_medicines": [
+    "Nexium",
+    "Esotrex"
+  ],
+  "description": "A proton pump inhibitor (PPI) used to treat gastroesophageal reflux disease (GERD) and peptic ulcers.",
+  "doses": "20 mg once daily, at least one hour before a meal.",
+  "side_effects": [
+    "Headache",
+    "Nausea",
+    "Diarrhea"
+  ],
+  "actions": "Suppresses gastric acid secretion by inhibiting the H+/K+ ATPase pump in the gastric parietal cells.",
+  "interactions": [
+    "Clopidogrel",
+    "Warfarin"
+  ],
+  "uses": [
+    "GERD",
+    "Peptic ulcers"
+  ],
+  "available": 100,
+  "sold": 59,
+  "warnings": [
+    "May increase risk of Clostridium difficile-associated diarrhea",
+    "Long-term use may increase risk of bone fractures"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd4b"
+  },
+  "id": 57,
+  "medicine_name": "Omidon",
+  "generic_name": "Domperidone",
+  "brand_name": "Omidon",
+  "alt_medicines": [
+    "Motilium",
+    "Domstal"
+  ],
+  "description": "A dopamine receptor antagonist used to treat nausea and vomiting.",
+  "doses": "10-20 mg 3-4 times daily before meals and at bedtime.",
+  "side_effects": [
+    "Dry mouth",
+    "Headache",
+    "Abdominal cramps"
+  ],
+  "actions": "Blocks dopamine receptors in the chemoreceptor trigger zone, reducing nausea and vomiting.",
+  "interactions": [
+    "Ketoconazole",
+    "Erythromycin"
+  ],
+  "uses": [
+    "Nausea",
+    "Vomiting",
+    "Delayed gastric emptying"
+  ],
+  "available": 100,
+  "sold": 69,
+  "warnings": [
+    "May cause QT prolongation",
+    "Use with caution in patients with heart conditions"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd16"
+  },
+  "id": 5,
+  "medicine_name": "Lisinopril",
+  "generic_name": "Lisinopril",
+  "company_name": "Prinivil",
+  "alt_medicines": [
+    "Zestril"
+  ],
+  "description": "An ACE inhibitor used to treat high blood pressure and heart failure.",
+  "doses": "10-40 mg once daily.",
+  "side_effects": [
+    "Cough",
+    "Dizziness",
+    "Hyperkalemia"
+  ],
+  "actions": "Inhibits the angiotensin-converting enzyme.",
+  "interactions": [
+    "Diuretics",
+    "Potassium supplements"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Heart failure"
+  ],
+  "available": 80,
+  "sold": 36,
+  "warnings": [
+    "Monitor potassium levels",
+    "Avoid during pregnancy"
+  ],
+  "lastSoldDate": "9/10/2024, 2:50:29 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd19"
+  },
+  "id": 8,
+  "medicine_name": "Atorvastatin",
+  "generic_name": "Atorvastatin",
+  "company_name": "Lipitor",
+  "alt_medicines": [
+    "Sortis",
+    "Torvast"
+  ],
+  "description": "A statin used to lower cholesterol and reduce the risk of heart disease.",
+  "doses": "10-80 mg once daily.",
+  "side_effects": [
+    "Muscle pain",
+    "Liver enzyme changes",
+    "Nausea"
+  ],
+  "actions": "Inhibits HMG-CoA reductase, reducing cholesterol synthesis.",
+  "interactions": [
+    "Grapefruit juice",
+    "CYP3A4 inhibitors"
+  ],
+  "uses": [
+    "High cholesterol",
+    "Cardiovascular risk reduction"
+  ],
+  "available": 100,
+  "sold": 25,
+  "warnings": [
+    "Monitor liver function",
+    "Avoid grapefruit juice"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd20"
+  },
+  "id": 15,
+  "medicine_name": "Esomeprazole",
+  "generic_name": "Esomeprazole",
+  "company_name": "Nexium",
+  "alt_medicines": [
+    "Nexium IV",
+    "Nexium 24HR"
+  ],
+  "description": "A proton pump inhibitor used to treat GERD, peptic ulcer disease, and Zollinger-Ellison syndrome.",
+  "doses": "20-40 mg once daily.",
+  "side_effects": [
+    "Headache",
+    "Nausea",
+    "Abdominal pain"
+  ],
+  "actions": "Inhibits the proton pump in gastric parietal cells, reducing acid production.",
+  "interactions": [
+    "Clopidogrel",
+    "Warfarin"
+  ],
+  "uses": [
+    "GERD",
+    "Peptic ulcer disease",
+    "Zollinger-Ellison syndrome"
+  ],
+  "available": 100,
+  "sold": 13,
+  "warnings": [
+    "Take before meals",
+    "Monitor magnesium levels"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd23"
+  },
+  "id": 18,
+  "medicine_name": "Aripiprazole",
+  "generic_name": "Aripiprazole",
+  "company_name": "Abilify",
+  "alt_medicines": [
+    "Aripiprex",
+    "Abilitat"
+  ],
+  "description": "An atypical antipsychotic used to treat schizophrenia, bipolar disorder, and major depressive disorder.",
+  "doses": "10-30 mg once daily.",
+  "side_effects": [
+    "Weight gain",
+    "Akathisia",
+    "Insomnia"
+  ],
+  "actions": "Partial agonist at dopamine D2 and serotonin 5-HT1A receptors.",
+  "interactions": [
+    "Fluoxetine",
+    "Quinidine"
+  ],
+  "uses": [
+    "Schizophrenia",
+    "Bipolar disorder",
+    "Major depressive disorder"
+  ],
+  "available": 100,
+  "sold": 10,
+  "warnings": [
+    "May increase the risk of suicidal thoughts in children and young adults",
+    "Monitor for signs of neuroleptic malignant syndrome"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd24"
+  },
+  "id": 19,
+  "medicine_name": "Montelukast",
+  "generic_name": "Montelukast",
+  "company_name": "Singulair",
+  "alt_medicines": [
+    "Lukotas",
+    "Montair"
+  ],
+  "description": "A leukotriene receptor antagonist used to prevent asthma and treat allergic rhinitis.",
+  "doses": "10 mg once daily in the evening.",
+  "side_effects": [
+    "Headache",
+    "Abdominal pain",
+    "Mood changes"
+  ],
+  "actions": "Blocks leukotriene receptors, reducing bronchoconstriction and inflammation.",
+  "interactions": [
+    "Theophylline",
+    "Phenobarbital"
+  ],
+  "uses": [
+    "Asthma",
+    "Allergic rhinitis"
+  ],
+  "available": 100,
+  "sold": 25,
+  "warnings": [
+    "May cause neuropsychiatric events",
+    "Do not abruptly discontinue"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd3f"
+  },
+  "id": 45,
+  "medicine_name": "Citalopram",
+  "generic_name": "Citalopram",
+  "company_name": "Celexa",
+  "alt_medicines": [
+    "Cipramil",
+    "Seropram"
+  ],
+  "description": "A selective serotonin reuptake inhibitor (SSRI) used to treat depression and anxiety disorders.",
+  "doses": "20-40 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Insomnia",
+    "Sexual dysfunction"
+  ],
+  "actions": "Inhibits the reuptake of serotonin in the brain.",
+  "interactions": [
+    "MAOIs",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Depression",
+    "Anxiety disorders"
+  ],
+  "available": 96,
+  "sold": 80,
+  "warnings": [
+    "May increase suicidal thoughts in children and young adults",
+    "Avoid alcohol"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd42"
+  },
+  "id": 48,
+  "medicine_name": "Doxycycline",
+  "generic_name": "Doxycycline",
+  "company_name": "Vibramycin",
+  "alt_medicines": [
+    "Adoxa",
+    "Doryx"
+  ],
+  "description": "A tetracycline antibiotic used to treat bacterial infections such as acne, respiratory tract infections, and Lyme disease.",
+  "doses": "100-200 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Vomiting",
+    "Photosensitivity"
+  ],
+  "actions": "Inhibits bacterial protein synthesis by binding to the 30S ribosomal subunit.",
+  "interactions": [
+    "Antacids",
+    "Warfarin"
+  ],
+  "uses": [
+    "Acne",
+    "Respiratory tract infections",
+    "Lyme disease"
+  ],
+  "available": 100,
+  "sold": 87,
+  "warnings": [
+    "May cause tooth discoloration in children",
+    "Avoid in pregnancy after 15 weeks"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd47"
+  },
+  "id": 53,
+  "medicine_name": "Gilipitam 50/500",
+  "generic_name": "Sitagliptin and Metformin",
+  "brand_name": "Gilipitam",
+  "alt_medicines": [
+    "Janumet",
+    "Istamet"
+  ],
+  "description": "A combination medication used to improve blood sugar control in adults with type 2 diabetes. Sitagliptin is a DPP-4 inhibitor and metformin is a biguanide.",
+  "doses": "50 mg sitagliptin / 500 mg metformin twice daily with meals.",
+  "side_effects": [
+    "Nausea",
+    "Diarrhea",
+    "Hypoglycemia"
+  ],
+  "actions": "Sitagliptin increases insulin release and decreases glucagon levels, while metformin decreases hepatic glucose production and increases insulin sensitivity.",
+  "interactions": [
+    "Alcohol",
+    "Cimetidine"
+  ],
+  "uses": [
+    "Type 2 diabetes mellitus"
+  ],
+  "available": 100,
+  "sold": 7,
+  "warnings": [
+    "Monitor renal function",
+    "Avoid excessive alcohol consumption"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd18"
+  },
+  "id": 7,
+  "medicine_name": "Metformin",
+  "generic_name": "Metformin",
+  "company_name": "Glucophage",
+  "alt_medicines": [
+    "Fortamet",
+    "Glumetza"
+  ],
+  "description": "A medication used to treat type 2 diabetes by lowering glucose production in the liver.",
+  "doses": "500-1000 mg twice daily.",
+  "side_effects": [
+    "Nausea",
+    "Diarrhea",
+    "Vitamin B12 deficiency"
+  ],
+  "actions": "Decreases hepatic glucose production and increases insulin sensitivity.",
+  "interactions": [
+    "Alcohol",
+    "Iodinated contrast agents"
+  ],
+  "uses": [
+    "Type 2 diabetes"
+  ],
+  "available": 100,
+  "sold": 18,
+  "warnings": [
+    "Monitor kidney function",
+    "Take with meals to reduce gastrointestinal effects"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd1c"
+  },
+  "id": 11,
+  "medicine_name": "Diazepam",
+  "generic_name": "Diazepam",
+  "company_name": "Valium",
+  "alt_medicines": [
+    "Rivotril",
+    "Xanax"
+  ],
+  "description": "A benzodiazepine used to treat anxiety disorders, alcohol withdrawal symptoms, muscle spasms, and seizures.",
+  "doses": "2-10 mg two to four times daily.",
+  "side_effects": [
+    "Drowsiness",
+    "Fatigue",
+    "Confusion"
+  ],
+  "actions": "Enhances the effect of gamma-aminobutyric acid (GABA) in the brain.",
+  "interactions": [
+    "Alcohol",
+    "Other CNS depressants"
+  ],
+  "uses": [
+    "Anxiety disorders",
+    "Alcohol withdrawal",
+    "Muscle spasms",
+    "Seizures"
+  ],
+  "available": 100,
+  "sold": 23,
+  "warnings": [
+    "May cause dependence",
+    "Avoid alcohol"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd2e"
+  },
+  "id": 28,
+  "medicine_name": "Morphine",
+  "generic_name": "Morphine",
+  "company_name": "MS Contin",
+  "alt_medicines": [
+    "Kadian",
+    "Avinza"
+  ],
+  "description": "An opioid analgesic used to treat moderate to severe pain.",
+  "doses": "Immediate-release: 10-30 mg every 4 hours. Extended-release: 10-200 mg once daily.",
+  "side_effects": [
+    "Constipation",
+    "Nausea",
+    "Sedation"
+  ],
+  "actions": "Binds to mu-opioid receptors in the CNS, altering the perception of pain.",
+  "interactions": [
+    "Benzodiazepines",
+    "Alcohol"
+  ],
+  "uses": [
+    "Moderate to severe pain"
+  ],
+  "available": 100,
+  "sold": 35,
+  "warnings": [
+    "May cause respiratory depression",
+    "Risk of addiction and misuse"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd30"
+  },
+  "id": 30,
+  "medicine_name": "Lorazepam",
+  "generic_name": "Lorazepam",
+  "company_name": "Ativan",
+  "alt_medicines": [
+    "Temesta",
+    "Almazine"
+  ],
+  "description": "A benzodiazepine used to treat anxiety disorders, insomnia, and seizures.",
+  "doses": "1-4 mg divided into 2-3 doses per day.",
+  "side_effects": [
+    "Drowsiness",
+    "Dizziness",
+    "Confusion"
+  ],
+  "actions": "Enhances the effect of gamma-aminobutyric acid (GABA) in the brain.",
+  "interactions": [
+    "Alcohol",
+    "Other CNS depressants"
+  ],
+  "uses": [
+    "Anxiety disorders",
+    "Insomnia",
+    "Seizures"
+  ],
+  "available": 95,
+  "sold": 92,
+  "warnings": [
+    "May cause dependence",
+    "Avoid alcohol"
+  ],
+  "lastSoldDate": "9/8/2024, 10:40:51 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd36"
+  },
+  "id": 36,
+  "medicine_name": "Budesonide",
+  "generic_name": "Budesonide",
+  "company_name": "Pulmicort",
+  "alt_medicines": [
+    "Rhinocort"
+  ],
+  "description": "A corticosteroid used to treat asthma, allergic rhinitis, and inflammatory bowel disease.",
+  "doses": "200-800 mcg inhalation twice daily.",
+  "side_effects": [
+    "Sore throat",
+    "Nasal irritation",
+    "Cough"
+  ],
+  "actions": "Suppresses inflammation in the airways.",
+  "interactions": [
+    "Ketoconazole",
+    "Ritonavir"
+  ],
+  "uses": [
+    "Asthma",
+    "Allergic rhinitis",
+    "Inflammatory bowel disease"
+  ],
+  "available": 100,
+  "sold": 72,
+  "warnings": [
+    "May cause local immunosuppression",
+    "Rinse mouth after use"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd38"
+  },
+  "id": 38,
+  "medicine_name": "Escitalopram",
+  "generic_name": "Escitalopram",
+  "company_name": "Lexapro",
+  "alt_medicines": [
+    "Cipralex",
+    "Seroplex"
+  ],
+  "description": "A selective serotonin reuptake inhibitor (SSRI) used to treat depression and anxiety disorders.",
+  "doses": "10-20 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Insomnia",
+    "Sexual dysfunction"
+  ],
+  "actions": "Inhibits the reuptake of serotonin in the brain.",
+  "interactions": [
+    "MAOIs",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Depression",
+    "Anxiety disorders"
+  ],
+  "available": 100,
+  "sold": 87,
+  "warnings": [
+    "May increase suicidal thoughts in children and young adults",
+    "Avoid alcohol"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd39"
+  },
+  "id": 39,
+  "medicine_name": "Tramadol",
+  "generic_name": "Tramadol",
+  "company_name": "Ultram",
+  "alt_medicines": [
+    "Ultracet",
+    "ConZip"
+  ],
+  "description": "An opioid analgesic used to treat moderate to moderately severe pain.",
+  "doses": "Immediate-release: 50-100 mg every 4-6 hours. Extended-release: 100-300 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Constipation",
+    "Sedation"
+  ],
+  "actions": "Binds to mu-opioid receptors in the CNS, altering the perception of pain.",
+  "interactions": [
+    "Benzodiazepines",
+    "Alcohol"
+  ],
+  "uses": [
+    "Moderate to moderately severe pain"
+  ],
+  "available": 100,
+  "sold": 98,
+  "warnings": [
+    "May cause respiratory depression",
+    "Risk of addiction and misuse"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd3c"
+  },
+  "id": 42,
+  "medicine_name": "Metformin",
+  "generic_name": "Metformin",
+  "company_name": "Glucophage",
+  "alt_medicines": [
+    "Riomet",
+    "Fortamet"
+  ],
+  "description": "A biguanide antidiabetic used to treat type 2 diabetes mellitus.",
+  "doses": "500-2000 mg twice daily with meals.",
+  "side_effects": [
+    "Nausea",
+    "Diarrhea",
+    "Lactic acidosis"
+  ],
+  "actions": "Decreases hepatic glucose production and increases insulin sensitivity.",
+  "interactions": [
+    "Iodinated contrast media",
+    "Alcohol"
+  ],
+  "uses": [
+    "Type 2 diabetes mellitus"
+  ],
+  "available": 100,
+  "sold": 34,
+  "warnings": [
+    "Monitor renal function",
+    "Discontinue before administering iodinated contrast"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd3e"
+  },
+  "id": 44,
+  "medicine_name": "Cephalexin",
+  "generic_name": "Cephalexin",
+  "company_name": "Keflex",
+  "alt_medicines": [
+    "Ceporex",
+    "Cefalin"
+  ],
+  "description": "A first-generation cephalosporin antibiotic used to treat bacterial infections such as respiratory tract infections and skin infections.",
+  "doses": "250-1000 mg every 6 hours.",
+  "side_effects": [
+    "Diarrhea",
+    "Nausea",
+    "Skin rash"
+  ],
+  "actions": "Inhibits bacterial cell wall synthesis.",
+  "interactions": [
+    "Probenecid",
+    "Oral contraceptives"
+  ],
+  "uses": [
+    "Bacterial infections",
+    "Respiratory tract infections",
+    "Skin infections"
+  ],
+  "available": 100,
+  "sold": 89,
+  "warnings": [
+    "May cause Clostridium difficile-associated diarrhea",
+    "Use with caution in penicillin-sensitive patients"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd46"
+  },
+  "id": 52,
+  "medicine_name": "Napa Extra",
+  "generic_name": "Paracetamol and Caffeine",
+  "brand_name": "Napa Extra",
+  "alt_medicines": [
+    "Panadol Extra",
+    "Tylenol Extra Strength"
+  ],
+  "description": "A combination medication used to treat mild to moderate pain and reduce fever. The caffeine component enhances the pain-relieving effects of paracetamol.",
+  "doses": "1-2 tablets every 4-6 hours as needed, not to exceed 8 tablets in 24 hours.",
+  "side_effects": [
+    "Liver damage",
+    "Nausea",
+    "Insomnia"
+  ],
+  "actions": "Paracetamol acts as an analgesic and antipyretic, while caffeine acts as a central nervous system stimulant.",
+  "interactions": [
+    "Alcohol",
+    "Warfarin"
+  ],
+  "uses": [
+    "Pain relief",
+    "Fever reduction"
+  ],
+  "available": 100,
+  "sold": 11,
+  "warnings": [
+    "Avoid excessive alcohol consumption",
+    "May cause severe liver damage if taken in high doses"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd1b"
+  },
+  "id": 10,
+  "medicine_name": "Losartan",
+  "generic_name": "Losartan",
+  "company_name": "Cozaar",
+  "alt_medicines": [
+    "Hyzaar (with HCTZ)"
+  ],
+  "description": "An angiotensin II receptor blocker (ARB) used to treat high blood pressure and protect the kidneys in diabetes.",
+  "doses": "50-100 mg once daily.",
+  "side_effects": [
+    "Dizziness",
+    "Back pain",
+    "Hyperkalemia"
+  ],
+  "actions": "Blocks the effects of angiotensin II, lowering blood pressure.",
+  "interactions": [
+    "NSAIDs",
+    "Potassium supplements"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Diabetic nephropathy"
+  ],
+  "available": 100,
+  "sold": 67,
+  "warnings": [
+    "Monitor potassium levels",
+    "Avoid during pregnancy"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd22"
+  },
+  "id": 17,
+  "medicine_name": "Sertraline",
+  "generic_name": "Sertraline",
+  "company_name": "Zoloft",
+  "alt_medicines": [
+    "Lustral",
+    "Aremis"
+  ],
+  "description": "A selective serotonin reuptake inhibitor (SSRI) used to treat depression, obsessive-compulsive disorder (OCD), panic disorder, and social anxiety disorder.",
+  "doses": "50-200 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Insomnia",
+    "Sexual dysfunction"
+  ],
+  "actions": "Inhibits the reuptake of serotonin in the brain.",
+  "interactions": [
+    "MAOIs",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Depression",
+    "Obsessive-compulsive disorder",
+    "Panic disorder",
+    "Social anxiety disorder"
+  ],
+  "available": 95,
+  "sold": 28,
+  "warnings": [
+    "May increase suicidal thoughts in children and young adults",
+    "Avoid alcohol"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd32"
+  },
+  "id": 32,
+  "medicine_name": "Venlafaxine",
+  "generic_name": "Venlafaxine",
+  "company_name": "Effexor",
+  "alt_medicines": [
+    "Efexor",
+    "Venlor"
+  ],
+  "description": "A serotonin-norepinephrine reuptake inhibitor (SNRI) used to treat depression, anxiety disorders, and panic disorder.",
+  "doses": "75-225 mg divided into 2-3 doses per day.",
+  "side_effects": [
+    "Nausea",
+    "Insomnia",
+    "Sexual dysfunction"
+  ],
+  "actions": "Inhibits the reuptake of serotonin and norepinephrine in the brain.",
+  "interactions": [
+    "MAOIs",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Depression",
+    "Anxiety disorders",
+    "Panic disorder"
+  ],
+  "available": 100,
+  "sold": 77,
+  "warnings": [
+    "May increase suicidal thoughts in children and young adults",
+    "Avoid alcohol"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd3d"
+  },
+  "id": 43,
+  "medicine_name": "Ondansetron",
+  "generic_name": "Ondansetron",
+  "company_name": "Zofran",
+  "alt_medicines": [
+    "Zuplenz",
+    "Emeset"
+  ],
+  "description": "A serotonin 5-HT3 receptor antagonist used to prevent nausea and vomiting associated with chemotherapy and surgery.",
+  "doses": "8-16 mg 30 minutes before chemotherapy or surgery.",
+  "side_effects": [
+    "Headache",
+    "Constipation",
+    "Fatigue"
+  ],
+  "actions": "Blocks serotonin 5-HT3 receptors in the gut and central nervous system.",
+  "interactions": [
+    "Apomorphine",
+    "Tramadol"
+  ],
+  "uses": [
+    "Nausea and vomiting associated with chemotherapy",
+    "Postoperative nausea and vomiting"
+  ],
+  "available": 100,
+  "sold": 76,
+  "warnings": [
+    "May prolong QT interval",
+    "Monitor ECG in patients with electrolyte abnormalities"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd11"
+  },
+  "id": 1,
+  "medicine_name": "Xeldrin 20",
+  "generic_name": "Omeprazole",
+  "company_name": "ACI Limited",
+  "alt_medicines": [
+    "Losectil 20",
+    "Omep 20",
+    "PPI 20",
+    "Seclo 20",
+    "updated20"
+  ],
+  "description": "Omeprazole, a substituted benzimidazole, is an inhibitor of gastric acid secretion. It inhibits gastric acid secretion by blocking hydrogen-potassium-adenosine triphosphatase (H+/K+ ATPase) enzyme system in the gastric parietal cell. After oral administration, the onset of the antisecretory effect occurs within one hour, with the maximum effect occurring within two hours and inhibition of secretion lasts up to 72 hours. When the drug is discontinued, secretory activity returns gradually, over 3 to 5 days.",
+  "doses": "20 mg once daily for 4 weeks in duodenal ulceration, 8 weeks in gastric ulceration; in severe or recurrent cases, dose to be increased to 40 mg daily; maintenance dose for recurrent duodenal ulcer, 20 mg once daily; in prevention of relapse in duodenal ulcer, 10-20 mg daily.updated",
+  "side_effects": [
+    "Headache",
+    "Nausea",
+    "Diarrhea",
+    "Abdominal pain",
+    "updated"
+  ],
+  "actions": "Inhibits the synthesis of prostaglandins in the brain.updated",
+  "interactions": [
+    "Alcohol",
+    "Warfarin",
+    "updated"
+  ],
+  "uses": [
+    "Pain relief",
+    "Fever reduction",
+    "updated"
+  ],
+  "available": 490,
+  "sold": 35,
+  "warnings": [
+    "Avoid excessive alcohol consumption",
+    "Do not exceed 4000 mg per day",
+    "updated"
+  ],
+  "lastSoldDate": "9/10/2024, 2:46:22 PM",
+  "lastUpdated": "9/10/2024, 2:43:25 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd14"
+  },
+  "id": 3,
+  "medicine_name": "Amoxicillin",
+  "generic_name": "Amoxicillin",
+  "company_name": "Amoxil",
+  "alt_medicines": [
+    "Moxatag",
+    "Larotid"
+  ],
+  "description": "An antibiotic used to treat a variety of bacterial infections.",
+  "doses": "250-500 mg every 8 hours.",
+  "side_effects": [
+    "Nausea",
+    "Diarrhea",
+    "Rash"
+  ],
+  "actions": "Inhibits bacterial cell wall synthesis.",
+  "interactions": [
+    "Methotrexate",
+    "Warfarin"
+  ],
+  "uses": [
+    "Bacterial infections",
+    "Strep throat",
+    "Ear infections"
+  ],
+  "available": 70,
+  "sold": 44,
+  "warnings": [
+    "Complete the full course of treatment",
+    "May reduce the effectiveness of oral contraceptives"
+  ],
+  "lastSoldDate": "9/10/2024, 2:48:51 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd17"
+  },
+  "id": 6,
+  "medicine_name": "Amlodipine",
+  "generic_name": "Amlodipine",
+  "company_name": "Norvasc",
+  "alt_medicines": [
+    "Amvaz"
+  ],
+  "description": "A calcium channel blocker used to treat high blood pressure and angina.",
+  "doses": "5-10 mg once daily.",
+  "side_effects": [
+    "Swelling",
+    "Fatigue",
+    "Dizziness"
+  ],
+  "actions": "Inhibits calcium ion influx into vascular smooth muscle and myocardium.",
+  "interactions": [
+    "Simvastatin",
+    "CYP3A4 inhibitors"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Angina"
+  ],
+  "available": 95,
+  "sold": 22,
+  "warnings": [
+    "Monitor blood pressure regularly",
+    "May cause dizziness"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd1e"
+  },
+  "id": 13,
+  "medicine_name": "Loratadine",
+  "generic_name": "Loratadine",
+  "company_name": "Claritin",
+  "alt_medicines": [
+    "Alavert",
+    "Clarinex"
+  ],
+  "description": "An antihistamine used to relieve allergy symptoms such as sneezing, itching, watery eyes, or runny nose.",
+  "doses": "10 mg once daily.",
+  "side_effects": [
+    "Headache",
+    "Dry mouth",
+    "Fatigue"
+  ],
+  "actions": "Blocks histamine H1 receptors.",
+  "interactions": [
+    "Alcohol",
+    "Sedatives"
+  ],
+  "uses": [
+    "Allergy relief",
+    "Hay fever",
+    "Urticaria"
+  ],
+  "available": 100,
+  "sold": 200,
+  "warnings": [
+    "May cause drowsiness",
+    "Avoid driving if affected"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd21"
+  },
+  "id": 16,
+  "medicine_name": "Metoprolol",
+  "generic_name": "Metoprolol",
+  "company_name": "Lopressor",
+  "alt_medicines": [
+    "Toprol-XL"
+  ],
+  "description": "A beta-blocker used to treat high blood pressure, angina, and heart failure.",
+  "doses": "25-100 mg twice daily.",
+  "side_effects": [
+    "Fatigue",
+    "Dizziness",
+    "Bradycardia"
+  ],
+  "actions": "Blocks beta-1 adrenergic receptors, reducing heart rate and contractility.",
+  "interactions": [
+    "Calcium channel blockers",
+    "Insulin"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Angina",
+    "Heart failure"
+  ],
+  "available": 100,
+  "sold": 100,
+  "warnings": [
+    "Do not abruptly discontinue",
+    "May mask symptoms of hypoglycemia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd1a"
+  },
+  "id": 9,
+  "medicine_name": "Omeprazole",
+  "generic_name": "Omeprazole",
+  "company_name": "Prilosec",
+  "alt_medicines": [
+    "Losec",
+    "Omesec"
+  ],
+  "description": "A proton pump inhibitor used to treat gastroesophageal reflux disease (GERD) and stomach ulcers.",
+  "doses": "20-40 mg once daily.",
+  "side_effects": [
+    "Headache",
+    "Diarrhea",
+    "Abdominal pain"
+  ],
+  "actions": "Inhibits the proton pump in gastric parietal cells, reducing acid production.",
+  "interactions": [
+    "Clopidogrel",
+    "Methotrexate"
+  ],
+  "uses": [
+    "GERD",
+    "Stomach ulcers"
+  ],
+  "available": 100,
+  "sold": 54,
+  "warnings": [
+    "Take before meals",
+    "Monitor magnesium levels"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd25"
+  },
+  "id": 20,
+  "medicine_name": "Fluoxetine",
+  "generic_name": "Fluoxetine",
+  "company_name": "Prozac",
+  "alt_medicines": [
+    "Sarafem",
+    "Prodep"
+  ],
+  "description": "A selective serotonin reuptake inhibitor (SSRI) used to treat depression, obsessive-compulsive disorder (OCD), bulimia nervosa, and panic disorder.",
+  "doses": "20-80 mg once daily.",
+  "side_effects": [
+    "Nausea",
+    "Insomnia",
+    "Sexual dysfunction"
+  ],
+  "actions": "Inhibits the reuptake of serotonin in the brain.",
+  "interactions": [
+    "MAOIs",
+    "NSAIDs"
+  ],
+  "uses": [
+    "Depression",
+    "Obsessive-compulsive disorder",
+    "Bulimia nervosa",
+    "Panic disorder"
+  ],
+  "available": 100,
+  "sold": 29,
+  "warnings": [
+    "May increase suicidal thoughts in children and young adults",
+    "Avoid alcohol"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd26"
+  },
+  "id": 21,
+  "medicine_name": "Bupropion",
+  "generic_name": "Bupropion",
+  "company_name": "Wellbutrin",
+  "alt_medicines": [
+    "Zyban",
+    "Aplenzin"
+  ],
+  "description": "An atypical antidepressant used to treat depression and aid smoking cessation.",
+  "doses": "150-300 mg once daily.",
+  "side_effects": [
+    "Insomnia",
+    "Dry mouth",
+    "Headache"
+  ],
+  "actions": "Inhibits the reuptake of norepinephrine and dopamine.",
+  "interactions": [
+    "MAOIs",
+    "Alcohol"
+  ],
+  "uses": [
+    "Depression",
+    "Smoking cessation"
+  ],
+  "available": 100,
+  "sold": 89,
+  "warnings": [
+    "May increase the risk of suicidal thoughts",
+    "Avoid alcohol"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd28"
+  },
+  "id": 23,
+  "medicine_name": "Hydrochlorothiazide",
+  "generic_name": "Hydrochlorothiazide",
+  "company_name": "Microzide",
+  "alt_medicines": [
+    "HCTZ"
+  ],
+  "description": "A thiazide diuretic used to treat high blood pressure and edema.",
+  "doses": "12.5-50 mg once daily.",
+  "side_effects": [
+    "Electrolyte imbalance",
+    "Hypokalemia",
+    "Hyperuricemia"
+  ],
+  "actions": "Inhibits sodium reabsorption in the distal convoluted tubule.",
+  "interactions": [
+    "Lithium",
+    "NSAIDs"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Edema"
+  ],
+  "available": 98,
+  "sold": 60,
+  "warnings": [
+    "Monitor electrolytes",
+    "May increase blood glucose levels"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd2f"
+  },
+  "id": 29,
+  "medicine_name": "Albuterol",
+  "generic_name": "Albuterol",
+  "company_name": "Ventolin",
+  "alt_medicines": [
+    "Proventil",
+    "ProAir"
+  ],
+  "description": "A short-acting beta-agonist bronchodilator used to treat asthma and COPD.",
+  "doses": "90 mcg inhalation every 4-6 hours as needed.",
+  "side_effects": [
+    "Tremor",
+    "Tachycardia",
+    "Headache"
+  ],
+  "actions": "Stimulates beta-2 adrenergic receptors in the airway smooth muscle, resulting in bronchodilation.",
+  "interactions": [
+    "Beta-blockers",
+    "MAOIs"
+  ],
+  "uses": [
+    "Asthma",
+    "COPD"
+  ],
+  "available": 95,
+  "sold": 82,
+  "warnings": [
+    "Avoid excessive use",
+    "May cause paradoxical bronchospasm"
+  ],
+  "lastSoldDate": "9/8/2024, 10:41:07 PM"
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd35"
+  },
+  "id": 35,
+  "medicine_name": "Carvedilol",
+  "generic_name": "Carvedilol",
+  "company_name": "Coreg",
+  "alt_medicines": [
+    "Coreg CR"
+  ],
+  "description": "A non-selective beta-blocker and alpha-1 blocker used to treat high blood pressure and heart failure.",
+  "doses": "6.25-25 mg twice daily.",
+  "side_effects": [
+    "Dizziness",
+    "Fatigue",
+    "Bradycardia"
+  ],
+  "actions": "Blocks beta-1, beta-2, and alpha-1 adrenergic receptors.",
+  "interactions": [
+    "Calcium channel blockers",
+    "Insulin"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Heart failure"
+  ],
+  "available": 100,
+  "sold": 95,
+  "warnings": [
+    "Do not abruptly discontinue",
+    "May mask symptoms of hypoglycemia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd3a"
+  },
+  "id": 40,
+  "medicine_name": "Atorvastatin",
+  "generic_name": "Atorvastatin",
+  "company_name": "Lipitor",
+  "alt_medicines": [
+    "Sortis",
+    "Torvast"
+  ],
+  "description": "A statin used to treat high cholesterol and reduce the risk of cardiovascular events.",
+  "doses": "10-80 mg once daily.",
+  "side_effects": [
+    "Muscle pain",
+    "Liver dysfunction",
+    "Increased risk of diabetes"
+  ],
+  "actions": "Inhibits HMG-CoA reductase, reducing cholesterol synthesis.",
+  "interactions": [
+    "Grapefruit juice",
+    "Warfarin"
+  ],
+  "uses": [
+    "High cholesterol",
+    "Prevention of cardiovascular events"
+  ],
+  "available": 100,
+  "sold": 68,
+  "warnings": [
+    "Monitor liver function",
+    "May increase blood glucose levels"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd43"
+  },
+  "id": 49,
+  "medicine_name": "Amoxicillin",
+  "generic_name": "Amoxicillin",
+  "company_name": "Amoxil",
+  "alt_medicines": [
+    "Trimox",
+    "Moxatag"
+  ],
+  "description": "A penicillin antibiotic used to treat bacterial infections such as respiratory tract infections, urinary tract infections, and skin infections.",
+  "doses": "250-500 mg every 8 hours.",
+  "side_effects": [
+    "Nausea",
+    "Diarrhea",
+    "Rash"
+  ],
+  "actions": "Inhibits bacterial cell wall synthesis.",
+  "interactions": [
+    "Probenecid",
+    "Oral contraceptives"
+  ],
+  "uses": [
+    "Respiratory tract infections",
+    "Urinary tract infections",
+    "Skin infections"
+  ],
+  "available": 100,
+  "sold": 77,
+  "warnings": [
+    "May cause Clostridium difficile-associated diarrhea",
+    "Use with caution in penicillin-sensitive patients"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd44"
+  },
+  "id": 50,
+  "medicine_name": "Ciprofloxacin",
+  "generic_name": "Ciprofloxacin",
+  "company_name": "Cipro",
+  "alt_medicines": [
+    "Cipro XR",
+    "Ciloxan"
+  ],
+  "description": "A fluoroquinolone antibiotic used to treat bacterial infections such as urinary tract infections, respiratory tract infections, and skin infections.",
+  "doses": "250-750 mg twice daily.",
+  "side_effects": [
+    "Nausea",
+    "Diarrhea",
+    "Tendon rupture"
+  ],
+  "actions": "Inhibits bacterial DNA gyrase and topoisomerase IV.",
+  "interactions": [
+    "Warfarin",
+    "Theophylline"
+  ],
+  "uses": [
+    "Urinary tract infections",
+    "Respiratory tract infections",
+    "Skin infections"
+  ],
+  "available": 100,
+  "sold": 33,
+  "warnings": [
+    "May cause tendinitis and tendon rupture",
+    "Avoid in children and adolescents"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd48"
+  },
+  "id": 54,
+  "medicine_name": "Dimerol MR 30",
+  "generic_name": "Trimebutine Maleate",
+  "brand_name": "Dimerol MR",
+  "alt_medicines": [
+    "Debridat",
+    "Mebutin"
+  ],
+  "description": "An antispasmodic agent used to treat irritable bowel syndrome and other gastrointestinal disorders.",
+  "doses": "30 mg three times daily before meals.",
+  "side_effects": [
+    "Drowsiness",
+    "Dry mouth",
+    "Dizziness"
+  ],
+  "actions": "Regulates bowel motility by modulating the activity of gastrointestinal smooth muscles.",
+  "interactions": [
+    "CNS depressants",
+    "Alcohol"
+  ],
+  "uses": [
+    "Irritable bowel syndrome",
+    "Gastrointestinal disorders"
+  ],
+  "available": 100,
+  "sold": 79,
+  "warnings": [
+    "May cause drowsiness",
+    "Avoid driving or operating machinery if affected"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd4d"
+  },
+  "id": 59,
+  "medicine_name": "CoralcalDX",
+  "generic_name": "Calcium Carbonate",
+  "brand_name": "CoralcalDX",
+  "alt_medicines": [
+    "Tums",
+    "Caltrate"
+  ],
+  "description": "A calcium supplement used to prevent or treat calcium deficiencies and to support bone health.",
+  "doses": "500-1500 mg once or twice daily, preferably with meals.",
+  "side_effects": [
+    "Constipation",
+    "Gas",
+    "Stomach upset"
+  ],
+  "actions": "Supplements dietary calcium intake to maintain bone strength and prevent osteoporosis.",
+  "interactions": [
+    "Levothyroxine",
+    "Iron supplements"
+  ],
+  "uses": [
+    "Calcium deficiency",
+    "Osteoporosis prevention"
+  ],
+  "available": 100,
+  "sold": 59,
+  "warnings": [
+    "Avoid in patients with hypercalcemia",
+    "Take with plenty of water to prevent constipation"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd4e"
+  },
+  "id": 60,
+  "medicine_name": "Marincle DX",
+  "generic_name": "Calcium Citrate",
+  "brand_name": "Marincle DX",
+  "alt_medicines": [
+    "Citracal",
+    "Cal-Citrate"
+  ],
+  "description": "A calcium supplement used to prevent or treat calcium deficiencies and to support bone health.",
+  "doses": "500-1200 mg once or twice daily, preferably with meals.",
+  "side_effects": [
+    "Nausea",
+    "Constipation",
+    "Stomach upset"
+  ],
+  "actions": "Supplements dietary calcium intake to maintain bone strength and prevent osteoporosis.",
+  "interactions": [
+    "Levothyroxine",
+    "Iron supplements"
+  ],
+  "uses": [
+    "Calcium deficiency",
+    "Osteoporosis prevention"
+  ],
+  "available": 100,
+  "sold": 29,
+  "warnings": [
+    "Take with plenty of water to prevent constipation",
+    "Avoid in patients with hypercalcemia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd27"
+  },
+  "id": 22,
+  "medicine_name": "Levothyroxine",
+  "generic_name": "Levothyroxine",
+  "company_name": "Synthroid",
+  "alt_medicines": [
+    "Eltroxin",
+    "Euthyrox"
+  ],
+  "description": "A synthetic form of thyroxine (T4) used to treat hypothyroidism.",
+  "doses": "25-200 mcg once daily.",
+  "side_effects": [
+    "Weight loss",
+    "Tremors",
+    "Palpitations"
+  ],
+  "actions": "Replaces or supplements endogenous thyroid hormones.",
+  "interactions": [
+    "Calcium supplements",
+    "Warfarin"
+  ],
+  "uses": [
+    "Hypothyroidism"
+  ],
+  "available": 100,
+  "sold": 76,
+  "warnings": [
+    "Individualize dose based on thyroid function tests",
+    "Take on an empty stomach"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd29"
+  },
+  "id": 24,
+  "medicine_name": "Prednisone",
+  "generic_name": "Prednisone",
+  "company_name": "Deltasone",
+  "alt_medicines": [
+    "Cortan",
+    "Meticorten"
+  ],
+  "description": "A corticosteroid used to treat inflammation, allergic reactions, autoimmune diseases, and adrenal insufficiency.",
+  "doses": "5-60 mg once daily.",
+  "side_effects": [
+    "Weight gain",
+    "Insomnia",
+    "Increased appetite"
+  ],
+  "actions": "Suppresses inflammation and the immune response.",
+  "interactions": [
+    "NSAIDs",
+    "Warfarin"
+  ],
+  "uses": [
+    "Inflammatory conditions",
+    "Allergic reactions",
+    "Autoimmune diseases"
+  ],
+  "available": 100,
+  "sold": 90,
+  "warnings": [
+    "Do not abruptly discontinue",
+    "May cause adrenal suppression"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd2c"
+  },
+  "id": 26,
+  "medicine_name": "Metoprolol",
+  "generic_name": "Metoprolol",
+  "company_name": "Lopressor",
+  "alt_medicines": [
+    "Toprol-XL"
+  ],
+  "description": "A beta-blocker used to treat high blood pressure, angina, and heart failure.",
+  "doses": "25-100 mg twice daily.",
+  "side_effects": [
+    "Fatigue",
+    "Dizziness",
+    "Bradycardia"
+  ],
+  "actions": "Blocks beta-1 adrenergic receptors, reducing heart rate and contractility.",
+  "interactions": [
+    "Calcium channel blockers",
+    "Insulin"
+  ],
+  "uses": [
+    "High blood pressure",
+    "Angina",
+    "Heart failure"
+  ],
+  "available": 100,
+  "sold": 67,
+  "warnings": [
+    "Do not abruptly discontinue",
+    "May mask symptoms of hypoglycemia"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd34"
+  },
+  "id": 34,
+  "medicine_name": "Quetiapine",
+  "generic_name": "Quetiapine",
+  "company_name": "Seroquel",
+  "alt_medicines": [
+    "Seroquel XR"
+  ],
+  "description": "An atypical antipsychotic used to treat schizophrenia, bipolar disorder, and major depressive disorder.",
+  "doses": "25-800 mg once daily.",
+  "side_effects": [
+    "Sedation",
+    "Weight gain",
+    "Dizziness"
+  ],
+  "actions": "Antagonizes dopamine and serotonin receptors in the brain.",
+  "interactions": [
+    "Fluoxetine",
+    "Quinidine"
+  ],
+  "uses": [
+    "Schizophrenia",
+    "Bipolar disorder",
+    "Major depressive disorder"
+  ],
+  "available": 100,
+  "sold": 99,
+  "warnings": [
+    "May increase the risk of suicidal thoughts in children and young adults",
+    "May cause orthostatic hypotension"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c4c1880c4d7a9cce76bd40"
+  },
+  "id": 46,
+  "medicine_name": "Azithromycin",
+  "generic_name": "Azithromycin",
+  "company_name": "Zithromax",
+  "alt_medicines": [
+    "Z-Pak",
+    "Azee"
+  ],
+  "description": "A macrolide antibiotic used to treat bacterial infections such as respiratory tract infections, skin infections, and sexually transmitted infections.",
+  "doses": "500 mg once daily for 3 days or 500 mg on day 1 followed by 250 mg once daily for 4 days.",
+  "side_effects": [
+    "Nausea",
+    "Abdominal pain",
+    "Diarrhea"
+  ],
+  "actions": "Inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit.",
+  "interactions": [
+    "Warfarin",
+    "Digoxin"
+  ],
+  "uses": [
+    "Respiratory tract infections",
+    "Skin infections",
+    "Sexually transmitted infections"
+  ],
+  "available": 90,
+  "sold": 44,
+  "warnings": [
+    "May cause QT prolongation",
+    "Monitor for signs of hepatic injury"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ddd763c1cc82e5ca9063b3"
+  },
+  "medicine_name": "Maxpro 20",
+  "generic_name": "Esomeprazole",
+  "company_name": "Renata Limited",
+  "alt_medicines": [
+    "maxpro20",
+    "exium20",
+    "dexilend20"
+  ],
+  "description": "maxpro20, exium20, dexilend20",
+  "doses": "maxpro20, exium20, dexilend20",
+  "side_effects": [
+    "maxpro20",
+    "exium20",
+    "dexilend20"
+  ],
+  "actions": "maxpro20, exium20, dexilend20",
+  "interactions": [
+    "maxpro20",
+    "exium20",
+    "dexilend20"
+  ],
+  "uses": [
+    "maxpro20",
+    "exium20",
+    "dexilend20"
+  ],
+  "sold": 20,
+  "warnings": [
+    "maxpro20",
+    "exium20",
+    "dexilend20"
+  ],
+  "createdAt": "9/8/2024, 10:57:06 PM",
+  "available": 980,
+  "lastSoldDate": "9/8/2024, 11:10:30 PM"
+},
+{
+  "_id": {
+    "$oid": "66ddd8bba6d165215942f6e0"
+  },
+  "medicine_name": "frenxit",
+  "generic_name": "frenxit",
+  "company_name": "Beximco",
+  "alt_medicines": [
+    "frenxit0.5",
+    "frenxit1.0",
+    "frexit1.25",
+    "frenxit1.50"
+  ],
+  "description": "frenxit0.5,frenxit1.0,frexit1.25,frenxit1.50",
+  "doses": "frenxit0.5,frenxit1.0,frexit1.25,frenxit1.50",
+  "side_effects": [
+    "frenxit0.5",
+    "frenxit1.0",
+    "frexit1.25",
+    "frenxit1.50"
+  ],
+  "actions": "frenxit0.5,frenxit1.0,frexit1.25,frenxit1.50",
+  "interactions": [
+    "frenxit0.5",
+    "frenxit1.0",
+    "frexit1.25",
+    "frenxit1.50"
+  ],
+  "uses": [
+    "frenxit0.5",
+    "frenxit1.0",
+    "frexit1.25",
+    "frenxit1.50"
+  ],
+  "sold": 10,
+  "available": 990,
+  "warnings": [
+    "frenxit0.5",
+    "frenxit1.0",
+    "frexit1.25",
+    "frenxit1.50"
+  ],
+  "createdAt": "9/8/2024, 11:02:51 PM",
+  "lastSoldDate": "9/8/2024, 11:09:29 PM"
+},
+{
+  "_id": {
+    "$oid": "66ddda13a6d165215942f6e1"
+  },
+  "medicine_name": "Emijoy5",
+  "generic_name": "Emijoy",
+  "company_name": "Beximco",
+  "alt_medicines": [
+    "Emijoy1",
+    "Emijoy2",
+    "Emijoy3",
+    "Emijoy4"
+  ],
+  "description": "Emijoy1,Emijoy2,Emijoy3,Emijoy4",
+  "doses": "Emijoy1,Emijoy2,Emijoy3,Emijoy4",
+  "side_effects": [
+    "Emijoy1",
+    "Emijoy2",
+    "Emijoy3",
+    "Emijoy4"
+  ],
+  "actions": "Emijoy1,Emijoy2,Emijoy3,Emijoy4",
+  "interactions": [
+    "Emijoy1",
+    "Emijoy2",
+    "Emijoy3",
+    "Emijoy4"
+  ],
+  "uses": [
+    "Emijoy1",
+    "Emijoy2",
+    "Emijoy3",
+    "Emijoy4"
+  ],
+  "sold": 10,
+  "available": 990,
+  "warnings": [
+    "Emijoy1",
+    "Emijoy2",
+    "Emijoy3",
+    "Emijoy4"
+  ],
+  "createdAt": "9/8/2024, 11:08:35 PM",
+  "lastSoldDate": "9/8/2024, 11:09:16 PM"
+},
+{
+  "_id": {
+    "$oid": "66de8eea8885229cc8be7962"
+  },
+  "medicine_name": "ex1 ",
+  "generic_name": "ex1 up",
+  "company_name": "ex1 up",
+  "alt_medicines": [
+    "ex1",
+    "ex2",
+    "ex3",
+    "ex4",
+    "up",
+    "up"
+  ],
+  "description": "ex1,ex2,ex3,ex4,up,up",
+  "doses": "ex1,ex2,ex3,ex4,up,up",
+  "side_effects": [
+    "ex1",
+    "ex2",
+    "ex3",
+    "ex4",
+    "up",
+    "up"
+  ],
+  "actions": "ex1,ex2,ex3,ex4,up,up",
+  "interactions": [
+    "ex1",
+    "ex2",
+    "ex3",
+    "ex4",
+    "up",
+    "up"
+  ],
+  "uses": [
+    "ex1",
+    "ex2",
+    "ex3",
+    "ex4",
+    "up",
+    "up"
+  ],
+  "sold": 0,
+  "available": 100,
+  "warnings": [
+    "ex1",
+    "ex2",
+    "ex3",
+    "ex4",
+    "up",
+    "up"
+  ],
+  "createdAt": "9/9/2024, 12:00:10 PM",
+  "lastUpdated": "9/10/2024, 12:08:00 PM"
+},
+{
+  "_id": {
+    "$oid": "66dfe2b77d1bfb402d916901"
+  },
+  "medicine_name": "latest up",
+  "generic_name": "latest up",
+  "company_name": "latest up",
+  "alt_medicines": [
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "up"
+  ],
+  "description": "latest,latest,latest,latest,latest,latest,up",
+  "doses": "latest,latest,latest,latest,latest,latest,up",
+  "side_effects": [
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "up"
+  ],
+  "actions": "latest,latest,latest,latest,latest,latest,up",
+  "interactions": [
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "up"
+  ],
+  "uses": [
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "up"
+  ],
+  "sold": 10,
+  "available": 500,
+  "warnings": [
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "latest",
+    "up"
+  ],
+  "createdAt": "9/10/2024, 12:09:59 PM",
+  "lastUpdated": "9/10/2024, 12:20:16 PM",
+  "lastSoldDate": "9/10/2024, 12:26:30 PM"
+},
+{
+  "_id": {
+    "$oid": "66e0095551b68ad17ed6887e"
+  },
+  "medicine_name": "Alben DS",
+  "generic_name": "Alben DS",
+  "company_name": "Escape",
+  "alt_medicines": [
+    "Alben DS",
+    "Alben DS",
+    "Alben DS",
+    "Alben DS"
+  ],
+  "description": "Alben DS,Alben DS,Alben DS,Alben DS",
+  "doses": "Alben DS,Alben DS,Alben DS,Alben DS",
+  "side_effects": [
+    "Alben DS",
+    "Alben DS",
+    "Alben DS",
+    "Alben DS"
+  ],
+  "actions": "Alben DS,Alben DS,Alben DS,Alben DS",
+  "interactions": [
+    "Alben DS",
+    "Alben DS",
+    "Alben DS",
+    "Alben DS"
+  ],
+  "uses": [
+    "Alben DS",
+    "Alben DS",
+    "Alben DS",
+    "Alben DS"
+  ],
+  "sold": 20,
+  "available": 980,
+  "warnings": [
+    "Alben DS",
+    "Alben DS",
+    "Alben DS",
+    "Alben DS"
+  ],
+  "createdAt": "9/10/2024, 2:54:45 PM",
+  "lastSoldDate": "9/10/2024, 2:59:29 PM"
+},
+{
+  "_id": {
+    "$oid": "66e009f451b68ad17ed6887f"
+  },
+  "medicine_name": "Alben TS",
+  "generic_name": "Alben TS",
+  "company_name": "Escape",
+  "alt_medicines": [
+    "Alben TS",
+    "Alben TS",
+    "Alben TS",
+    "Alben TS"
+  ],
+  "description": "Alben TS,Alben TS,Alben TS,Alben TS",
+  "doses": "Alben TS,Alben TS,Alben TS,Alben TS",
+  "side_effects": [
+    "Alben TS",
+    "Alben TS",
+    "Alben TS",
+    "Alben TS"
+  ],
+  "actions": "Alben TS,Alben TS,Alben TS,Alben TS",
+  "interactions": [
+    "Alben TS",
+    "Alben TS",
+    "Alben TS",
+    "Alben TS"
+  ],
+  "uses": [
+    "Alben TS",
+    "Alben TS",
+    "Alben TS",
+    "Alben TS"
+  ],
+  "sold": 10,
+  "available": 490,
+  "warnings": [
+    "Alben TS",
+    "Alben TS",
+    "Alben TS",
+    "Alben TS"
+  ],
+  "createdAt": "9/10/2024, 2:57:24 PM",
+  "lastUpdated": "9/10/2024, 2:58:20 PM",
+  "lastSoldDate": "9/10/2024, 2:58:55 PM"
+}]

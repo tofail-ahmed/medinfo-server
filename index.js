@@ -85,7 +85,7 @@ async function run() {
     app.get("/api/v1/singleMedicine/:id", async (req, res) => {
       try {
         const id = req.params.id;
-        console.log(id);
+        // console.log(id);
         const query = { _id: new ObjectId(id) };
         const SingleMedicine = await medicine.findOne(query);
         if (!SingleMedicine) {
@@ -136,11 +136,11 @@ async function run() {
     app.put("/api/v1/medicine/:id", async (req, res) => {
       try {
         const id = req.params.id;
-        console.log(id);
+        // console.log(id);
         const { ...fields } = req.body;
         // console.log(req.body);
 
-        const currentDate = new Date().toLocaleString();
+        const currentDate = new Date();
         const filter = { _id: new ObjectId(id) };
         // console.log("filter", filter);
 
@@ -240,7 +240,8 @@ async function run() {
       try {
         const id = req.params.id;
         const { amountSold } = req.body;
-        const currentDate = new Date().toLocaleString(); 
+        const ISOString = new Date().toLocaleString(); 
+        const currentDate=new Date(ISOString)
 
         // Validate the amountSold value
         if (!amountSold || typeof amountSold !== "number") {
@@ -398,7 +399,7 @@ async function run() {
           sold: 0, // Default sold is 0 if not provided
           available:available,
           warnings: warnings || [], // Default to empty array if not provided
-          createdAt: new Date().toLocaleString(), // Add a timestamp for when the medicine was created
+          createdAt: new Date(), // Add a timestamp for when the medicine was created
         };
 
         // Insert the new medicine into the collection
@@ -478,7 +479,7 @@ async function run() {
 
         // Insert the new user into the database
         const result = await user.insertOne(newUser);
-        console.log(result);
+        // console.log(result);
         // Respond with success message and the new user data
         res.status(201).json({
           success: true,
@@ -499,7 +500,7 @@ async function run() {
       try {
         const { id } = req.params;
         const { role } = req.body;
-        console.log(role);
+        // console.log(role);
         const filter = { _id: new ObjectId(id) };
         const updatedUser = { $set: { role } };
         const result = await user.updateOne(filter, updatedUser);
@@ -642,7 +643,7 @@ async function run() {
       try {
         const { id } = req.params;
         const body = req.body;
-        console.log(body)
+        // console.log(body)
         const currentTime = new Date().toLocaleString(); // Get current date and time
 
         const filter = { _id: new ObjectId(id) };
@@ -660,7 +661,7 @@ async function run() {
         // Use updateOne with $push and $setOnInsert to either push into an array or create it if it doesn't exist
         const result = await user.updateOne(filter, update, { upsert: true });
 
-        console.log(result);
+        // console.log(result);
         if (result.modifiedCount !== 1 && result.upsertedCount !== 1) {
           res.status(409).json({
             success: false,
