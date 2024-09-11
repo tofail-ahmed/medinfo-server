@@ -284,8 +284,12 @@ async function run() {
     app.get("/api/v1/withLastSold", async (req, res) => {
       try {
         // Query to find all medicines that have the 'lastSoldDate' field
-        const medicinesWithLastSold = await medicine.find({ lastSoldDate: { $exists: true } }).sort({ lastSoldDate: -1 }) .toArray();
-    
+        const medicinesWithLastSold = await medicine
+        .find({ lastSoldDate: { $exists: true } })
+        .sort({ lastSoldDate: -1 })
+        .project({ medicine_name: 1, lastSoldDate: 1, _id: 1 }) // Include only 'name' and 'lastSoldDate', exclude '_id'
+        .toArray();
+          
         // Log the result to check if data exists
         // console.log("Medicines found:", medicinesWithLastSold);
         // console.log(typeof medicinesWithLastSold); // should be "object"
@@ -323,7 +327,7 @@ async function run() {
         const latestMedicines = await medicine
           .find({ lastSoldDate: { $exists: true } }) // Only include medicines with the lastSoldDate field
           .sort({ lastSoldDate: -1 }) // Sort by lastSoldDate in descending order (latest first)
-          .limit(20) // Limit the results to the latest 20 medicines
+          // .limit(20) // Limit the results to the latest 20 medicines
           .toArray();
 
         const medNum = latestMedicines.length;
@@ -358,6 +362,8 @@ async function run() {
           uses,
           available,
           warnings,
+          type,
+          category
 
         } = req.body;
 
@@ -399,6 +405,8 @@ async function run() {
           sold: 0, // Default sold is 0 if not provided
           available:available,
           warnings: warnings || [], // Default to empty array if not provided
+          type:type,
+          category:category, 
           createdAt: new Date(), // Add a timestamp for when the medicine was created
         };
 
@@ -436,7 +444,7 @@ async function run() {
         const result = await medicine.deleteOne(filter);
 
         if (result.deletedCount === 0) {
-          return res.status(404).json({
+          return res.status(409).json({
             success: false,
             message: "Medicine not found.",
           });
@@ -454,6 +462,54 @@ async function run() {
         });
       }
     });
+
+    //* 21. ading a new field to all document-------
+    // app.put("/api/v1/addNewField",async(req,res)=>{
+    //   try {
+    //     const result = await medicine.updateMany(
+    //       {}, // An empty filter means it will apply to all documents
+    //       { $set: { type: "capsule",category:"Allergy" } } // Add the new field with its value
+    //     );
+    //     console.log(`${result.modifiedCount} documents were updated.`);
+    //   } catch (error) {
+    //     console.error("Error adding new field to all documents:", error);
+    //   }
+    // })
+
+    //* 22. finding all data containing a certain field's value-----------
+    app.get("/api/v1/medByValueField", async (req, res) => {
+      try {
+        const query = req.body; // Expect the body to be in format { "field": "value" }
+        
+        // Ensure the body contains exactly one field
+        const field = Object.keys(query)[0];
+        const value = query[field];
+        
+        if (!field || !value) {
+          return res.status(400).json({
+            success: false,
+            message: "Both field and value are required",
+          });
+        }
+        
+        // Dynamically create the query for the specified field with a case-insensitive search
+        const searchQuery = { [field]: { $regex: value, $options: "i" } };
+    
+        // Perform the search in the database
+        const result = await medicine.find(searchQuery).project({_id:1,type:1,category:1}).toArray();
+    
+        res.status(200).json(result); // Send the matched data back
+      } catch (error) {
+        console.error("Error from medByValue API", error);
+        res.status(500).json({
+          success: false,
+          message: "Server error",
+          data: error,
+        });
+      }
+    });
+    
+    
 
     //!--------------user------------------
     //* 13. ----------------------adding new user--------------
