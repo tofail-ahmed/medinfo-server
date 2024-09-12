@@ -479,27 +479,35 @@ async function run() {
     //* 22. finding all data containing a certain field's value-----------
     app.get("/api/v1/medByValueField", async (req, res) => {
       try {
-        const query = req.query; // Expect the parms to be in format { "field": "value" }
-        console.log(query)
-        // Ensure the body contains exactly one field
-        const field = Object.keys(query)[0];
-        const value = query[field];
-        
-        if (!field || !value) {
+        const { category, type } = req.query;
+    
+        // Build the search query dynamically based on the presence of category and/or type
+        const searchQuery = {};
+        if (category) {
+          searchQuery.category = { $regex: category, $options: "i" };
+        }
+        if (type) {
+          searchQuery.type = { $regex: type, $options: "i" };
+        }
+    
+        if (Object.keys(searchQuery).length === 0) {
           return res.status(400).json({
             success: false,
-            message: "Both field and value are required",
+            message: "At least one of category or type is required",
           });
         }
-        
-        // Dynamically create the query for the specified field with a case-insensitive search
-        const searchQuery = { [field]: { $regex: value, $options: "i" } };
-    console.log(searchQuery)
-        // Perform the search in the database
-        // const result = await medicine.find(searchQuery).project({_id:1,type:1,category:1}).toArray();
-        const result = await medicine.find(searchQuery).toArray();
     
-        res.status(200).json(result); // Send the matched data back
+        // Search the database with the constructed query
+        // const result = await medicine.find(searchQuery).project({
+        //   _id: 1,
+        //   // medicine_name: 1,
+        //   // generic_name: 1,
+        //   // company_name: 1,
+        //   type: 1,
+        //   category: 1,
+        // }).toArray();
+        const result = await medicine.find(searchQuery).toArray();
+        res.status(200).json(result);
       } catch (error) {
         console.error("Error from medByValue API", error);
         res.status(500).json({
@@ -509,6 +517,8 @@ async function run() {
         });
       }
     });
+    
+    
     
     
 
