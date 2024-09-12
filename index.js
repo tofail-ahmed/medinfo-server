@@ -479,8 +479,8 @@ async function run() {
     //* 22. finding all data containing a certain field's value-----------
     app.get("/api/v1/medByValueField", async (req, res) => {
       try {
-        const query = req.body; // Expect the body to be in format { "field": "value" }
-        
+        const query = req.query; // Expect the parms to be in format { "field": "value" }
+        console.log(query)
         // Ensure the body contains exactly one field
         const field = Object.keys(query)[0];
         const value = query[field];
@@ -494,9 +494,10 @@ async function run() {
         
         // Dynamically create the query for the specified field with a case-insensitive search
         const searchQuery = { [field]: { $regex: value, $options: "i" } };
-    
+    console.log(searchQuery)
         // Perform the search in the database
-        const result = await medicine.find(searchQuery).project({_id:1,type:1,category:1}).toArray();
+        // const result = await medicine.find(searchQuery).project({_id:1,type:1,category:1}).toArray();
+        const result = await medicine.find(searchQuery).toArray();
     
         res.status(200).json(result); // Send the matched data back
       } catch (error) {
