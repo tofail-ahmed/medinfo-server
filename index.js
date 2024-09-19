@@ -464,25 +464,27 @@ async function run() {
     });
 
     //* 21. ading a new field to all document-------
-    // app.put("/api/v1/addNewField",async(req,res)=>{
-    //   try {
-    //     const result = await medicine.updateMany(
-    //       {}, // An empty filter means it will apply to all documents
-    //       { $set: { type: "capsule",category:"Allergy" } } // Add the new field with its value
-    //     );
-    //     console.log(`${result.modifiedCount} documents were updated.`);
-    //   } catch (error) {
-    //     console.error("Error adding new field to all documents:", error);
-    //   }
-    // })
+    app.put("/api/v1/addNewField",async(req,res)=>{
+      try {
+        const result = await medicine.updateMany(
+          {}, // An empty filter means it will apply to all documents
+          { $set: { status: "approved" } } // Add the new field with its value
+        );
+        console.log(`${result.modifiedCount} documents were updated.`);
+      } catch (error) {
+        console.error("Error adding new field to all documents:", error);
+      }
+    })
 
     //* 22. finding all data containing a certain field's value-----------
     app.get("/api/v1/medByValueField", async (req, res) => {
       try {
         const { category, type } = req.query;
-    
+    console.log("category:",category)
+    console.log("type:",type)
         // Build the search query dynamically based on the presence of category and/or type
         const searchQuery = {};
+        console.log(searchQuery)
         if (category) {
           searchQuery.category = { $regex: category, $options: "i" };
         }
