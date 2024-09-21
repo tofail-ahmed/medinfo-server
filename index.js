@@ -363,8 +363,7 @@ async function run() {
           available,
           warnings,
           type,
-          category
-
+          category,
         } = req.body;
 
         // Validate required fields
@@ -403,11 +402,12 @@ async function run() {
           interactions: interactions || [], // Default to empty array if not provided
           uses: uses || [], // Default to empty array if not provided
           sold: 0, // Default sold is 0 if not provided
-          available:available,
+          available: available,
           warnings: warnings || [], // Default to empty array if not provided
-          type:type,
-          category:category, 
+          type: type,
+          category: category,
           createdAt: new Date(), // Add a timestamp for when the medicine was created
+          status: "approved",
         };
 
         // Insert the new medicine into the collection
@@ -464,7 +464,7 @@ async function run() {
     });
 
     //* 21. ading a new field to all document-------
-    app.put("/api/v1/addNewField",async(req,res)=>{
+    app.put("/api/v1/addNewField", async (req, res) => {
       try {
         const result = await medicine.updateMany(
           {}, // An empty filter means it will apply to all documents
@@ -474,31 +474,31 @@ async function run() {
       } catch (error) {
         console.error("Error adding new field to all documents:", error);
       }
-    })
+    });
 
     //* 22. finding all data containing a certain field's value-----------
     app.get("/api/v1/medByValueField", async (req, res) => {
       try {
         const { category, type } = req.query;
-    console.log("category:",category)
-    console.log("type:",type)
+        console.log("category:", category);
+        console.log("type:", type);
         // Build the search query dynamically based on the presence of category and/or type
         const searchQuery = {};
-        console.log(searchQuery)
+        console.log(searchQuery);
         if (category) {
           searchQuery.category = { $regex: category, $options: "i" };
         }
         if (type) {
           searchQuery.type = { $regex: type, $options: "i" };
         }
-    
+
         if (Object.keys(searchQuery).length === 0) {
           return res.status(400).json({
             success: false,
             message: "At least one of category or type is required",
           });
         }
-    
+
         // Search the database with the constructed query
         // const result = await medicine.find(searchQuery).project({
         //   _id: 1,
@@ -519,9 +519,48 @@ async function run() {
         });
       }
     });
-    
-    
-    
+
+    //* suggest medicine-----------------
+
+    app.post("/api/v1/suggestMedicine", async (req, res) => {
+      try {
+        const body = req.body;
+        const suggestedMedicine = {
+          ...body,
+          status: "pending",
+
+          alt_medicines: ["pending ", "pending ", "pending "], // Default to empty array if not provided
+          description: "pending", // Default to empty string if not provided
+          doses: "pending", // Default to empty string if not provided
+          side_effects: ["pending ", "pending ", "pending "], // Default to empty array if not provided
+          actions: "pending", // Default to empty string if not provided
+          interactions: ["pending ", "pending ", "pending "], // Default to empty array if not provided
+          uses: ["pending ", "pending ", "pending "], // Default to empty array if not provided
+          sold: 0, // Default sold is 0 if not provided
+          available: 0,
+          warnings: ["pending ", "pending ", "pending "], // Default to empty array if not provided
+          type: "pending",
+          category: "pending",
+          createdAt: new Date(), // Add a timestamp for when the medicine was created
+        };
+        const result = await medicine.insertOne(suggestedMedicine);
+        // console.log(result);
+        if (result.acknowledged === true) {
+          res.status(200).json({
+            success: true,
+            message: "Medicine request placed succesfully for review",
+            data: suggestedMedicine,
+          });
+        }
+       
+      } catch (error) {
+        res.status(409).json({
+          success: false,
+          message: "Error occured",
+          data: error,
+        });
+      }
+    });
     
 
     //!--------------user------------------
