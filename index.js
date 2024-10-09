@@ -563,7 +563,7 @@ async function run() {
     });
     
 
-    //!--------------user------------------
+    //!--------------user routes------------------
     //* 13. ----------------------adding new user--------------
     app.post("/api/v1/register", async (req, res) => {
       try {
