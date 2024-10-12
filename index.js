@@ -81,6 +81,7 @@ async function run() {
         });
       }
     });
+    
     //* 3. getting a specific medicine by id-------------------
     app.get("/api/v1/singleMedicine/:id", async (req, res) => {
       try {
