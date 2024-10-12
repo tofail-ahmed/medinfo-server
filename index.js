@@ -81,7 +81,7 @@ async function run() {
         });
       }
     });
-    
+
     //* 3. getting a specific medicine by id-------------------
     app.get("/api/v1/singleMedicine/:id", async (req, res) => {
       try {
@@ -469,7 +469,7 @@ async function run() {
       try {
         const result = await medicine.updateMany(
           {}, // An empty filter means it will apply to all documents
-          { $set: { status: "approved" } } // Add the new field with its value
+          { $set: { homeImg: " ", detailsImg:" " } } // Add the new field with its value
         );
         console.log(`${result.modifiedCount} documents were updated.`);
       } catch (error) {
