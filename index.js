@@ -568,7 +568,7 @@ async function run() {
     //* 13. ----------------------adding new user--------------
     app.post("/api/v1/register", async (req, res) => {
       try {
-        const { name, email, password,imgUrl,contact,address } = req.body;
+        const { name, email, password,imgUrl,contact,address,postalCode } = req.body;
 
         // Check if a user with this email already exists
         const existingUser = await user.findOne({ email });
@@ -584,7 +584,7 @@ async function run() {
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
         // Create a new user object with the hashed password
-        const newUser = { name, email, password: hashedPassword, role: "user",imgUrl,contact,address };
+        const newUser = { name, email, password: hashedPassword, role: "user",imgUrl,contact,address, postalCode};
 console.log(newUser)
         // Insert the new user into the database
         const result = await user.insertOne(newUser);
@@ -832,6 +832,24 @@ console.log(newUser)
         });
       }
     });
+
+    // * updating user credetials------------
+    app.put("/api/v1/updateUser/:id",async(req,res)=>{
+      try {
+      const {id}=req.params;
+      const body=req.body;
+      console.log(id,body);
+      res.send({
+        id,body
+      })
+      } catch (error) {
+        console.error("Error updating user purchase list:", error.message);
+        return res.status(409).json({
+          success: false,
+          message: "Server error",
+        });
+      }
+    })
     
     
 
