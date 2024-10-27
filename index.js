@@ -469,7 +469,7 @@ async function run() {
       try {
         const result = await medicine.updateMany(
           {}, // An empty filter means it will apply to all documents
-          { $set: { homeImg: " ", detailsImg:" " } } // Add the new field with its value
+          { $set: { homeImg: "https://i.ibb.co.com/NtRLdmk/xeldrin-20.jpg", detailsImg:"https://i.ibb.co.com/NtRLdmk/xeldrin-20.jpg" } } // Add the new field with its value
         );
         console.log(`${result.modifiedCount} documents were updated.`);
       } catch (error) {
@@ -568,7 +568,7 @@ async function run() {
     //* 13. ----------------------adding new user--------------
     app.post("/api/v1/register", async (req, res) => {
       try {
-        const { name, email, password } = req.body;
+        const { name, email, password,imgUrl,contact,address } = req.body;
 
         // Check if a user with this email already exists
         const existingUser = await user.findOne({ email });
@@ -584,8 +584,8 @@ async function run() {
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
         // Create a new user object with the hashed password
-        const newUser = { name, email, password: hashedPassword, role: "user" };
-
+        const newUser = { name, email, password: hashedPassword, role: "user",imgUrl,contact,address };
+console.log(newUser)
         // Insert the new user into the database
         const result = await user.insertOne(newUser);
         // console.log(result);
