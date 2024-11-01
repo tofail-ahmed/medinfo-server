@@ -838,10 +838,12 @@ console.log(newUser)
       try {
       const {id}=req.params;
       const body=req.body;
-      console.log(id,body);
-      res.send({
-        id,body
-      })
+      // const filter = { _id: new ObjectId(id) };
+      // const result = await user.updateOne(filter, update, { upsert: true });
+
+      console.log({id,body});
+      console.log(result);
+      
       } catch (error) {
         console.error("Error updating user purchase list:", error.message);
         return res.status(409).json({
@@ -850,6 +852,51 @@ console.log(newUser)
         });
       }
     })
+
+
+
+    //* adding or updating user review
+    const { ObjectId } = require("mongodb");
+
+    // Assuming `user` is a Mongoose model or a MongoDB collection reference
+    // Example: const user = mongoose.model("User", new mongoose.Schema({ review: String }));
+    
+    app.put("/api/v1/addreview/:id", async (req, res) => {
+      try {
+        const { id } = req.params;
+        const { review } = req.body;
+    
+        // MongoDB filter and update setup
+        const filter = { _id: new ObjectId(id) };
+        const updateData = { $set: { review } };
+    
+        // Update the review, and upsert if it doesn't exist
+        const result = await user.updateOne(filter, updateData, { upsert: true });
+    
+        if (result.matchedCount === 0 && result.upsertedCount === 0) {
+          return res.status(404).json({
+            success: false,
+            message: "Review not found and could not be created.",
+          });
+        }
+    
+        console.log("Update result:", result);
+        res.status(200).json({
+          success: true,
+          message: result.matchedCount
+            ? "Review updated successfully"
+            : "Review created successfully",
+          data: result,
+        });
+      } catch (error) {
+        console.error("Error updating user review:", error.message);
+        return res.status(500).json({
+          success: false,
+          message: "Server error",
+        });
+      }
+    });
+    
     
     
 
