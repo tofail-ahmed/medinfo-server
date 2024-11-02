@@ -834,29 +834,61 @@ console.log(newUser)
     });
 
     // * updating user credetials------------
-    app.put("/api/v1/updateUser/:id",async(req,res)=>{
+    app.put("/api/v1/updateUser/:id", async (req, res) => {
       try {
-      const {id}=req.params;
-      const body=req.body;
-      // const filter = { _id: new ObjectId(id) };
-      // const result = await user.updateOne(filter, update, { upsert: true });
-
-      console.log({id,body});
-      console.log(result);
-      
+        const { id } = req.params;
+        const { name, email, contact, imgUrl, postalCode, address } = req.body;
+    
+        const userData = {
+          name,
+          email,
+          contact,
+          imgUrl,
+          address,
+          postalCode
+        };
+    
+        const updateData = { $set: userData };
+        const filter = { _id: new ObjectId(id) };
+        const result = await user.updateOne(filter, updateData, { upsert: true });
+    // console.log(result)
+        if (result.matchedCount > 0) {
+          if (result.modifiedCount > 0) {
+            return res.status(200).json({
+              success: true,
+              message: "User updated successfully",
+            });
+          } else {
+            return res.status(200).json({
+              success: true,
+              message: "No changes made as the data was identical",
+            });
+          }
+        } else if (result.upsertedCount > 0) {
+          return res.status(201).json({
+            success: true,
+            message: "User created successfully",
+            userId: result.upsertedId,
+          });
+        } else {
+          return res.status(404).json({
+            success: false,
+            message: "User not found",
+          });
+        }
       } catch (error) {
-        console.error("Error updating user purchase list:", error.message);
-        return res.status(409).json({
+        console.error("Error updating user credentials:", error.message);
+        return res.status(500).json({
           success: false,
           message: "Server error",
         });
       }
-    })
+    });
 
 
 
     //* adding or updating user review
-    const { ObjectId } = require("mongodb");
+    // const { ObjectId } = require("mongodb");
 
     // Assuming `user` is a Mongoose model or a MongoDB collection reference
     // Example: const user = mongoose.model("User", new mongoose.Schema({ review: String }));
@@ -896,7 +928,7 @@ console.log(newUser)
         });
       }
     });
-    
+   
     
     
 
