@@ -927,38 +927,65 @@ console.log(newUser)
    
 
     // * adding assets-------
-    app.post("/api/v1/addAsset",async(req,res)=>{
-      try{
-        const {name,imgUrl}=req.body;
-        if(!name || !imgUrl){
-          res.status(400).json({
-            success:false,
-            message:"Name and ImgUrl both are required!!"
+    app.post("/api/v1/addAsset", async (req, res) => {
+      try {
+        const { name, imgUrl } = req.body;
+    
+        // Validate required fields
+        if (!name || !imgUrl) {
+          return res.status(400).json({
+            success: false,
+            message: "Name and ImgUrl are both required!",
           });
         }
 
-          const newAsset={
-            name,imgUrl
-          };
-        console.log(newAsset)
-const result=await asset.insertOne(newAsset)
-        console.log(result)
-        if(result.insertedId){
+        // Check if an asset with the same name or imgUrl already exists
+    const existingAsset = await asset.findOne({
+      $or: [{ name: name }, { imgUrl: imgUrl }],
+    });
 
+    if (existingAsset) {
+      return res.status(409).json({
+        success: false,
+        message: "An asset with the same name or image URL already exists!",
+      });
+    }
+    
+        // Create the new asset object
+        const newAsset = {
+          name,
+          imgUrl,
+          createdAt: new Date().toLocaleString("en-US", { timeZone: "Asia/Dhaka" }) // Adjust the timezone as needed
+
+        };
+    
+        console.log("New asset to be added:", newAsset);
+    
+        // Insert the new asset into the database
+        const result = await asset.insertOne(newAsset); // Assuming `asset` is your MongoDB collection
+    
+        // Check if the insertion was successful
+        if (result.insertedId) {
           res.status(201).json({
             success: true,
             message: "New asset added successfully",
-            data: newAsset, // Return the inserted document
+            data: { id: result.insertedId, ...newAsset }, // Include insertedId in the response
+          });
+        } else {
+          res.status(500).json({
+            success: false,
+            message: "Failed to add the asset.",
           });
         }
-      }catch (error) {
+      } catch (error) {
         console.error("Error adding assets:", error);
-        res.status(409).json({
+        res.status(500).json({
           success: false,
           message: "Internal server error.",
         });
       }
-    })
+    });
+    
     
     
 
