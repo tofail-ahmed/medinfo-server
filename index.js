@@ -29,6 +29,7 @@ async function run() {
     const db = client.db("medinfo");
     const medicine = db.collection("medicines");
     const user = db.collection("users");
+    const asset = db.collection("assets");
 
     //* 1. getting all medicines-------------------------
     app.get("/api/v1/medicines", async (req, res) => {
@@ -888,12 +889,7 @@ console.log(newUser)
 
 
     //* adding or updating user review
-    // const { ObjectId } = require("mongodb");
-
-    // Assuming `user` is a Mongoose model or a MongoDB collection reference
-    // Example: const user = mongoose.model("User", new mongoose.Schema({ review: String }));
-    
-    app.put("/api/v1/addreview/:id", async (req, res) => {
+      app.put("/api/v1/addreview/:id", async (req, res) => {
       try {
         const { id } = req.params;
         const { review } = req.body;
@@ -929,6 +925,40 @@ console.log(newUser)
       }
     });
    
+
+    // * adding assets-------
+    app.post("/api/v1/addAsset",async(req,res)=>{
+      try{
+        const {name,imgUrl}=req.body;
+        if(!name || !imgUrl){
+          res.status(400).json({
+            success:false,
+            message:"Name and ImgUrl both are required!!"
+          });
+        }
+
+          const newAsset={
+            name,imgUrl
+          };
+        console.log(newAsset)
+const result=await asset.insertOne(newAsset)
+        console.log(result)
+        if(result.insertedId){
+
+          res.status(201).json({
+            success: true,
+            message: "New asset added successfully",
+            data: newAsset, // Return the inserted document
+          });
+        }
+      }catch (error) {
+        console.error("Error adding assets:", error);
+        res.status(409).json({
+          success: false,
+          message: "Internal server error.",
+        });
+      }
+    })
     
     
 
