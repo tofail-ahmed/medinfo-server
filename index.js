@@ -985,7 +985,43 @@ console.log(newUser)
         });
       }
     });
-    
+
+
+
+   //* getting all assets--------
+   app.get("/api/v1/assets", async (req, res) => {
+    try {
+      // Optional query support for filtering
+      const filters = req.query || {};
+      
+      // Fetch assets with optional filters
+      const result = await asset.find(filters).toArray();
+      
+      // If no assets are found, respond with a 404 status
+      if (!result.length) {
+        return res.status(404).json({
+          success: false,
+          message: "No assets found",
+        });
+      }
+      
+      // Respond with the found assets
+      res.status(200).json({
+        success: true,
+        data: result,
+      });
+    } catch (error) {
+      console.error("Error fetching assets:", error);
+      res.status(500).json({
+        success: false,
+        message: "An error occurred while fetching assets",
+        error: error.message,
+      });
+    }
+  });
+  
+  
+  
     
     
 
