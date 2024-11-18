@@ -329,7 +329,7 @@ async function run() {
         const latestMedicines = await medicine
           .find({ lastSoldDate: { $exists: true } }) // Only include medicines with the lastSoldDate field
           .sort({ lastSoldDate: -1 }) // Sort by lastSoldDate in descending order (latest first)
-          // .limit(20) // Limit the results to the latest 20 medicines
+          .limit(10) // Limit the results to the latest 20 medicines
           .toArray();
 
         const medNum = latestMedicines.length;
