@@ -327,10 +327,12 @@ async function run() {
         const latestMedicines = await medicine
           .find({ createdAt: { $exists: true } }) // Ensure 'createdAt' field exists
           .sort({ createdAt: -1 }) // Sort by 'createdAt' in descending order
-          .limit(10) // Limit to the latest 10 documents
+          // .limit(10) // Limit to the latest 10 documents
           // .project({ medicine_name: 1, createdAt: 1, _id: 1 })
           .toArray(); // Include only 'medicine_name', 'createdAt', and '_id'
-    console.log(latestMedicines)
+
+
+
         // Count the number of medicines fetched
         const medNum = latestMedicines.length;
     
