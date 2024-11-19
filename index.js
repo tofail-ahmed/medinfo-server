@@ -318,6 +318,43 @@ async function run() {
         });
       }
     });
+
+
+    // * latest adde med--------
+    app.get("/api/v1/latest_medicines", async (req, res) => {
+      try {
+        // Query to find medicines and sort by 'createdAt' field
+        const latestMedicines = await medicine
+          .find({ createdAt: { $exists: true } }) // Ensure 'createdAt' field exists
+          .sort({ createdAt: -1 }) // Sort by 'createdAt' in descending order
+          .limit(10) // Limit to the latest 10 documents
+          // .project({ medicine_name: 1, createdAt: 1, _id: 1 })
+          .toArray(); // Include only 'medicine_name', 'createdAt', and '_id'
+    console.log(latestMedicines)
+        // Count the number of medicines fetched
+        const medNum = latestMedicines.length;
+    
+        if (medNum === 0) {
+          return res.status(404).json({
+            success: false,
+            message: "No medicines found with the createdAt field",
+          });
+        }
+    
+        res.status(200).json({
+          success: true,
+          message: `${medNum} latest medicines found successfully`,
+          data: latestMedicines,
+        });
+      } catch (error) {
+        console.error("Error fetching latest medicines:", error);
+        res.status(500).json({
+          success: false,
+          message: "Internal server error",
+        });
+      }
+    });
+    
     
 
    
