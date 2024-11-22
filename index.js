@@ -509,7 +509,7 @@ async function run() {
       try {
         const result = await medicine.updateMany(
           {}, // An empty filter means it will apply to all documents
-          { $set: { homeImg: "https://i.ibb.co.com/NtRLdmk/xeldrin-20.jpg", detailsImg:"https://i.ibb.co.com/NtRLdmk/xeldrin-20.jpg" } } // Add the new field with its value
+          { $set: { discount: 0.1 } } // Add the new field with its value
         );
         console.log(`${result.modifiedCount} documents were updated.`);
       } catch (error) {
