@@ -647,6 +647,34 @@ async function run() {
       }
     })
 
+    //* getting top discounted medicines
+
+    app.get("/api/v1/topDiscount",async(req,res)=>{
+      try{
+        const topDiscMeds=await medicine
+        .find({discount:{$exists:true}})
+        .sort({discount:-1})
+        .limit(12)
+        .toArray();
+        console.log(topDiscMeds.length)
+        res.status(200).send({
+          success:true,
+          message:"Data retrieve successfully",
+          data:topDiscMeds
+        })
+      }catch(error){
+        res.status(404).send({
+          suucess:false,
+          message:"error occures"
+        })
+      }
+    })
+
+
+
+
+
+
     //!--------------user routes------------------
     //* 13. ----------------------adding new user--------------
     app.post("/api/v1/register", async (req, res) => {
