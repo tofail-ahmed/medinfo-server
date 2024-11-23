@@ -604,6 +604,49 @@ async function run() {
     });
     
 
+
+    //* adding discunt field random value
+    app.put("/api/v1/addDiscountValue",async(req,res)=>{
+      try{
+        const discountOptions = [
+          0.1, 0.2, 0.3, 0.12, 0.13, 0.23, 0.05, 0.15, 0.18, 0.25, 0.08, 0.22, 0.11,
+          0.19, 0.14, 0.17, 0.09, 0.21, 0.24, 0.16,
+        ];
+        const meds=await medicine.find({}).toArray();
+        const bulkUps=meds.map((med)=>{
+          const randomDiscount=
+          discountOptions[Math.floor(Math.random()*discountOptions.length)];
+          return{
+            updateOne:{
+              filter:{_id:med._id},
+              update:{$set:{discount:randomDiscount}}
+            }
+          }
+        });
+        console.log(bulkUps);
+        // res.send({bulkUps})
+        if (bulkUps.length > 0) {
+          const result = await medicine.bulkWrite(bulkUps);
+          console.log(result)
+          // console.log(`${result.modifiedCount} documents were updated.`);
+          res.status(200).send({
+            success: true,
+            message: `${result.modifiedCount} medicines updated with random discount values.`,
+          });
+        } else {
+          res.status(200).send({
+            success: true,
+            message: "No medicines found to update.",
+          });
+        }
+      }catch(error){
+        res.status(404).send({
+          success:false,
+          message: "Failed to update medicines with random discounts."
+        })
+      }
+    })
+
     //!--------------user routes------------------
     //* 13. ----------------------adding new user--------------
     app.post("/api/v1/register", async (req, res) => {
