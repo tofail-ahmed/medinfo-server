@@ -652,8 +652,9 @@ async function run() {
     app.get("/api/v1/topDiscount",async(req,res)=>{
       try{
         const topDiscMeds=await medicine
-        .find({discount:{$exists:true}})
+        .find({discount:{$exists:true},status:"approved"})
         .sort({discount:-1})
+        
         .limit(12)
         .toArray();
         console.log(topDiscMeds.length)
@@ -661,6 +662,34 @@ async function run() {
           success:true,
           message:"Data retrieve successfully",
           data:topDiscMeds
+        })
+      }catch(error){
+        res.status(404).send({
+          suucess:false,
+          message:"error occures"
+        })
+      }
+    })
+
+
+    //*getting less stored meds
+    
+    app.get("/api/v1/lessStoredMeds",async(req,res)=>{
+      try{
+        const lessStored=await medicine
+        .find({available:{$exists:true},status:"approved"})
+        // .find({ available: { $exists: true } ,status: "approved"},
+          //  { projection: { _id: 1, medicine_name: 1, available: 1,status:1 } }) // Use projection to include specific fields
+
+        .sort({available:1})
+        .project({_id:1,medicine_name:1,available:1})
+        .limit(6)
+        .toArray();
+        console.log(lessStored.length)
+        res.status(200).send({
+          success:true,
+          message:"Data retrieve successfully",
+          data:lessStored
         })
       }catch(error){
         res.status(404).send({
