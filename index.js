@@ -682,7 +682,7 @@ async function run() {
           //  { projection: { _id: 1, medicine_name: 1, available: 1,status:1 } }) // Use projection to include specific fields
 
         .sort({available:1})
-        .project({_id:1,medicine_name:1,available:1})
+        // .project({_id:1,medicine_name:1,available:1})
         .limit(6)
         .toArray();
         console.log(lessStored.length)
@@ -699,6 +699,32 @@ async function run() {
       }
     })
 
+
+    //* getting most sold meds
+    app.get("/api/v1/mostSold",async(req,res)=>{
+      try{
+        const mostSold=await medicine
+        .find({sold:{$exists:true},status:"approved"})
+        // .find({ available: { $exists: true } ,status: "approved"},
+          //  { projection: { _id: 1, medicine_name: 1, available: 1,status:1 } }) // Use projection to include specific fields
+
+        .sort({sold:-1})
+        .project({_id:1,medicine_name:1,sold:1})
+        .limit(6)
+        .toArray();
+        console.log(mostSold.length)
+        res.status(200).send({
+          success:true,
+          message:"Data retrieve successfully",
+          data:mostSold
+        })
+      }catch(error){
+        res.status(404).send({
+          suucess:false,
+          message:"error occures"
+        })
+      }
+    })
 
 
 
